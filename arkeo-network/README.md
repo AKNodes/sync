@@ -19,7 +19,7 @@ description: >-
 
 {% tabs %}
 {% tab title="RPC" %}
-[https://rpc.arkeo.aknodes.net](https://api.arkeo.aknodes.net/)
+https://rpc.arkeo.aknodes.net
 {% endtab %}
 
 {% tab title="API" %}
