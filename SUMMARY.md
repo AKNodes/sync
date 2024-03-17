@@ -96,6 +96,11 @@
   * [Upgrade](hedge/upgrade.md)
   * [Sync](hedge/sync.md)
   * [Useful commands](hedge/useful-commands.md)
+* [Warden](warden/README.md)
+  * [Installation](warden/installation.md)
+  * [Upgrade](warden/upgrade.md)
+  * [Sync](warden/sync.md)
+  * [Useful commands](warden/useful-commands.md)
 
 ## 💻 MAINNET NETWORKS
 
