@@ -38,15 +38,15 @@ go version
 
 ### Install Node
 
-<pre><code>cd $HOME
-rm -rf swisstronik
-git clone  swisstronik
+```
+cd $HOME
+rm -rf swisstronik-chain
+git clone https://github.com/SigmaGmbH/swisstronik-chain swisstronik
 cd swisstronik
-git checkout v1.0.1
-make i<a data-footnote-ref href="#user-content-fn-1">ns</a>tall
-</code></pre>
-
-## Official docs : [https://swisstronik.gitbook.io/swisstronik-docs/node-setup/setup-node/](https://swisstronik.gitbook.io/swisstronik-docs/node-setup/setup-node/install-from-.deb-package)
+git submodule update --init --recursive
+make build
+make install
+```
 
 ## **Initialize Node**
 
@@ -95,5 +95,3 @@ curl https://snapshots.aknodes.net/snapshots/swisstronik/snapshot-swisstronik.AK
 sudo systemctl restart swisstronikd
 journalctl -u swisstronikd -f
 ```
-
-[^1]: 
