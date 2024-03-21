@@ -47,7 +47,7 @@ git clone https://github.com/NibiruChain/nibiru.git
 
 cd nibiru
 
-git checkout v1.0.2
+git checkout v1.0.3
 
 make install
 ```
