@@ -101,6 +101,11 @@
   * [Upgrade](warden/upgrade.md)
   * [Sync](warden/sync.md)
   * [Useful commands](warden/useful-commands.md)
+* [Side Protocol](side-protocol/README.md)
+  * [Installation](side-protocol/installation.md)
+  * [Upgrade](side-protocol/upgrade.md)
+  * [Sync](side-protocol/sync.md)
+  * [Useful commands](side-protocol/useful-commands.md)
 
 ## 💻 MAINNET NETWORKS
 

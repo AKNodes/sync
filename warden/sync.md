@@ -9,7 +9,7 @@ sudo systemctl stop wardend
 
 cp $HOME/.warden/data/priv_validator_state.json $HOME/.warden/priv_validator_state.json.backup 
 
-wardend tendermint unsafe-reset-all --home $HOME/.hedge --keep-addr-book 
+wardend tendermint unsafe-reset-all --home $HOME/.warden --keep-addr-book 
 curl https://snapshots.aknodes.net/snapshots/warden/snapshot-warden.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.warden
 
 mv $HOME/.warden/priv_validator_state.json.backup $HOME/.warden/data/priv_validator_state.json 
