@@ -6,7 +6,7 @@ description: >-
 
 # Side Protocol
 
-
+<figure><img src="../.gitbook/assets/ywO_kmkx_400x400.jpg" alt="" width="100"><figcaption></figcaption></figure>
 
 
 
