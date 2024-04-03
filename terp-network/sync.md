@@ -24,7 +24,7 @@ sudo systemctl stop terpd
 cp $HOME/.terp/data/priv_validator_state.json $HOME/.terp/priv_validator_state.json.backup
 terpd tendermint unsafe-reset-all --home $HOME/.terp
 
-peers="e23c7ecc1c07bcf0f6a17f8fe09a88adffc1dd89@167.235.14.83:13656,2f0f98eb3965cc9949073b1f0e75a5e55be44ed2@65.109.28.177:21856,e23c7ecc1c07bcf0f6a17f8fe09a88adffc1dd89@167.235.14.83:13656"  
+peers="e23c7ecc1c07bcf0f6a17f8fe09a88adffc1dd89@167.235.14.83:13656"  
 SNAP_RPC="https://rpc.terp.aknodes.net:443"
 
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.terp/config/config.toml 
