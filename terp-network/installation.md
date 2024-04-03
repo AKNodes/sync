@@ -40,23 +40,17 @@ go version
 
 ```
 cd $HOME
-
 rm -rf ~/terp-core
-
 git clone https://github.com/terpnetwork/terp-core.git
-
 cd terp-core
-
-git checkout v4.1.1-testnet
-
+git checkout v4.2.0
 make install
-
 ```
 
 ## **Initialize Node**
 
 ```
-terpd init "$MONIKER" --chain-id=90u-2
+terpd init "$MONIKER" --chain-id=90u-4
 ```
 
 ### Download genesis and addrbook

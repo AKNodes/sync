@@ -8,7 +8,7 @@ description: >-
 
 <figure><img src="../.gitbook/assets/zxzx-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>90u-2</td><td>v4.1.1</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>90u-4</td><td>v4.2.0</td></tr></tbody></table>
 
 
 
