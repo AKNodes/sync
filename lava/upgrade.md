@@ -1,6 +1,6 @@
 # Upgrade
 
-### Upgrade to v1.0.1 at height: 927794
+### Upgrade to v1.2.0 at height: 1048000
 
 ### Manual upgrade <a href="#manual" id="manual"></a>
 
