@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-
+Daily update
 
 ```
 sudo systemctl stop crossfid
