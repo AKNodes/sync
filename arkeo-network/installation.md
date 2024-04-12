@@ -43,7 +43,7 @@ cd $HOME
 
 mkdir -p /root/go/bin/
 
-wget https://snapshots.aknodes.net/snapshots/arkeod
+wget https://snapshots.aknodes.net/snapshots/arkeo/arkeod
 
 chmod +x arkeod
 
