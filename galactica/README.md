@@ -9,7 +9,9 @@ description: >-
 
 
 
-<figure><img src="../.gitbook/assets/channels4_profile.jpg" alt="" width="188"><figcaption></figcaption></figure>
+
+
+<figure><img src="../.gitbook/assets/1680700239688.jpg" alt="" width="100"><figcaption></figcaption></figure>
 
 
 
