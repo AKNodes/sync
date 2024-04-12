@@ -106,6 +106,11 @@
   * [Upgrade](side-protocol/upgrade.md)
   * [Sync](side-protocol/sync.md)
   * [Useful commands](side-protocol/useful-commands.md)
+* [Galactica](galactica/README.md)
+  * [Installation](galactica/installation.md)
+  * [Upgrade](galactica/upgrade.md)
+  * [Sync](galactica/sync.md)
+  * [Usefull Commands](galactica/usefull-commands.md)
 
 ## 💻 MAINNET NETWORKS
 
