@@ -30,7 +30,7 @@ sudo systemctl stop galacticad
 cp $HOME/.galactica/data/priv_validator_state.json $HOME/.galactica/priv_validator_state.json.backup
 galacticad tendermint unsafe-reset-all --home $HOME/.galactica
 
-peers="1688ce2c799e2ea5f73fb017895ea6fb5d4a5f14@167.235.14.83:30656"  
+peers="03d3c773e52c46274e35f3a36a7644e7f2ff37be@167.235.14.83:35656"  
 SNAP_RPC="https://rpc.galactica.aknodes.net:443"
 
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.galactica/config/config.toml 
