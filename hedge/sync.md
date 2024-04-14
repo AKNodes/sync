@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-
+Update every 6 hours
 
 ```
 sudo systemctl stop hedged

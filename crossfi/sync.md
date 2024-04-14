@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-Daily update
+Update every 6 hours
 
 ```
 sudo systemctl stop crossfid

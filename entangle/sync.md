@@ -2,6 +2,8 @@
 
 ## Snapshot
 
+Update every 6 hours
+
 <pre><code><strong>sudo systemctl stop entangled
 </strong><strong>
 </strong>cp $HOME/.entangled/data/priv_validator_state.json $HOME/.entangled/priv_validator_state.json.backup 
