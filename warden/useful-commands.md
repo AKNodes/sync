@@ -1,188 +1,285 @@
 # Useful commands
 
-### <mark style="color:purple;">Keys Management</mark>
+### Service operations ⚙️ <a href="#service-operations" id="service-operations"></a>
 
-**Create wallet**
+Check logs
 
-```
-wardend keys add wallet
-```
-
-**Recover wallet**
-
-```
-wardend keys add wallet --recover
+```bash
+sudo journalctl -u wardend -f
 ```
 
-**Check all keys**
+Start service
 
+```bash
+sudo systemctl start wardend
 ```
+
+Stop service
+
+```bash
+sudo systemctl stop wardend
+```
+
+Restart service
+
+```bash
+sudo systemctl restart wardend
+```
+
+Check service status
+
+```bash
+sudo systemctl status wardend
+```
+
+Reload services
+
+```bash
+sudo systemctl daemon-reload
+```
+
+Enable Service
+
+```bash
+sudo systemctl enable wardend
+```
+
+Disable Service
+
+```bash
+sudo systemctl disable wardend
+```
+
+Sync info
+
+```bash
+wardend status 2>&1 | jq .SyncInfo
+```
+
+Node info
+
+```bash
+wardend status 2>&1 | jq .NodeInfo
+```
+
+Your node peer
+
+```bash
+echo $(wardend tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.warden/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+```
+
+### Key management <a href="#key-management" id="key-management"></a>
+
+Add New Wallet
+
+```bash
+wardend keys add $WALLET
+```
+
+Restore executing wallet
+
+```bash
+wardend keys add $WALLET --recover
+```
+
+List All Wallets
+
+```bash
 wardend keys list
 ```
 
-**Check Balance**
+Delete wallet
 
-```
-wardend query bank balances xxxxxxx
-```
-
-**Delete Key**
-
-```
-wardend keys delete Wallet_Name
+```bash
+wardend keys delete $WALLET
 ```
 
-**Export Key**
+Check Balance
 
-```
-wardend keys export wallet
-```
-
-**Import Key**
-
-```
-wardend keys import wallet wallet.backup
+```bash
+wardend q bank balances $(wardend keys show $WALLET -a)
 ```
 
-## <mark style="color:orange;">Validator Management</mark>
+Export Key (save to wallet.backup)
 
-
-
-**Edit Validator**
-
+```bash
+wardend keys export $WALLET
 ```
+
+View EVM Prived Key
+
+```bash
+wardend keys unsafe-export-eth-key $WALLET
+```
+
+Import Key (restore from wallet.backup)
+
+```bash
+wardend keys import $WALLET wallet.backup
+```
+
+### Token <a href="#tokens" id="tokens"></a>
+
+Withdraw all rewards
+
+```bash
+wardend tx distribution withdraw-all-rewards --from $WALLET --chain-id buenavista-1 --gas auto --gas-adjustment 1.5 --fees 600uward
+```
+
+Withdraw rewards and commission from your validator
+
+```bash
+wardend tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id buenavista-1 --gas auto --gas-adjustment 1.5 --fees 600uward -y
+```
+
+Check your balance
+
+```bash
+wardend query bank balances $WALLET_ADDRESS
+```
+
+Delegate to Yourself
+
+```bash
+wardend tx staking delegate $(wardend keys show $WALLET --bech val -a) 1000000uward --from $WALLET --chain-id buenavista-1 --gas auto --gas-adjustment 1.5 --fees 600uward -y
+```
+
+Delegate
+
+```bash
+wardend tx staking delegate <TO_VALOPER_ADDRESS> 1000000uward --from $WALLET --chain-id buenavista-1 --gas auto --gas-adjustment 1.5 --fees 600uward -y
+```
+
+Redelegate Stake to Another Validator
+
+```bash
+wardend tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000uward --from $WALLET --chain-id buenavista-1 --gas auto --gas-adjustment 1.5 --fees 600uward -y
+```
+
+Unbond
+
+```bash
+wardend tx staking unbond $(wardend keys show $WALLET --bech val -a) 1000000uward --from $WALLET --chain-id buenavista-1 --gas auto --gas-adjustment 1.5 --fees 600uward -y
+```
+
+Transfer Funds
+
+```bash
+wardend tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000uward --gas auto --gas-adjustment 1.5 --fees 600uward -y
+```
+
+### Validator operations <a href="#validator-operations" id="validator-operations"></a>
+
+Create New Validator
+
+```bash
+wardend tx staking create-validator \
+--amount 1000000uward \
+--from $WALLET \
+--commission-rate 0.1 \
+--commission-max-rate 0.2 \
+--commission-max-change-rate 0.01 \
+--min-self-delegation 1 \
+--pubkey $(wardend tendermint show-validator) \
+--moniker "$MONIKER" \
+--identity "" \
+--details "" \
+--chain-id buenavista-1 \
+--gas auto --gas-adjustment 1.5 --fees 600uward \
+-y
+```
+
+Edit Existing Validator
+
+```bash
 wardend tx staking edit-validator \
---new-moniker "Your_Moniker" \
---identity "Keybase_ID" \
---details "Your_Description" \
---website "Your_Website" \
---security-contact "Your_Email" \
---chain-id alfama \
---commission-rate 0.05 \
---from Wallet_Name \
---gas 350000 -y
+--commission-rate 0.1 \
+--new-moniker "$MONIKER" \
+--identity "" \
+--details "" \
+--from $WALLET \
+--chain-id buenavista-1 \
+--gas auto --gas-adjustment 1.5 --fees 600uward \
+-y
 ```
 
-**Your Valoper-Address**
+Validator info
 
-```
-wardend keys show Wallet_Name --bech val
-```
-
-**Your Validator-Info**
-
-```
-wardend query staking validator VALOPER
+```bash
+wardend status 2>&1 | jq .ValidatorInfo
 ```
 
-**Jail Info**
+Validator Details
 
-```
-wardend query slashing signing-info $(wardend tendermint show-validator)
-```
-
-**Unjail**
-
-```
-wardend tx slashing unjail --from Wallet_name --chain-id alfama --gas 350000 -y
+```bash
+wardend q staking validator $(wardend keys show $WALLET --bech val -a)
 ```
 
-**Active Validators List**
+Jailing info
 
-```
-wardend q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
-```
-
-**Inactive Validators List**
-
-```
-wardend q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+```bash
+wardend q slashing signing-info $(wardend tendermint show-validator)
 ```
 
-**Check that your key matches the validator**&#x20;
+Slashing parameters
 
-```
-VALOPER=Enter_Your_valoper_Here
-[[ $(wardend  q staking validator $VALOPER -oj | jq -r .consensus_pubkey.key) = $(wardend status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\nYou win\n" || echo -e "\nYou lose\n"
-```
-
-**Withdraw all rewards from all validators**
-
-```
-wardend tx distribution withdraw-all-rewards --from Wallet_Name --chain-id alfama --gas 350000 -y
+```bash
+wardend q slashing params
 ```
 
-**Withdraw and commission from your Validator**
+Unjail validator
 
-```
-wardend tx distribution withdraw-rewards wardendvaloper1amxp0k0hg4edrxg85v07t9ka2tfuhamhldgf8e --from Wallet_Name --gas 350000 --chain-id=alfama --commission -y
-```
-
-**Delegate tokens to your validator**
-
-```
-wardend tx staking delegate VALOPER "100000000"uward --from Wallet_Name --gas 350000 --chain-id=alfama -y
+```bash
+wardend tx slashing unjail --from $WALLET --chain-id buenavista-1 --gas auto --gas-adjustment 1.5 --fees 600uward -y
 ```
 
-**Delegate tokens to different validator**
+Active Validators List
 
-```
-wardend tx staking delegate VALOPER "100000000"uward --from Wallet_Name --gas 350000 --chain-id=alfama -y
-```
-
-**Redelegate tokens to another validator**
-
-```
-wardend tx staking redelegate VALOPER VALOPER "100000000"uward --from Wallet_Name --gas 350000  --chain-id=alfama -y
+```bash
+wardend q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " 	 " + .description.moniker' | sort -gr | nl
 ```
 
-**Unbond tokens from your validator or different validator**
+Check Validator key
 
-```
-wardend tx staking unbond Your_wardenvalpoer........ "100000000"uward --from Wallet_Name --gas 350000 --chain-id=alfama -y
-wardend tx staking unbond wardendvalpoer........ "100000000"uward --from Wallet_Name --gas 350000 --chain-id=alfama -y
-```
-
-**Transfer tokens from wallet to wallet**
-
-```
-wardend tx bank send Your_wardenaddress............ wardenaddress........... "1000000000000000000"uward --gas 350000 --chain-id=alfama -y
+```bash
+[[ $(wardend q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(wardend status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "Your key status is ok" || echo -e "Your key status is error"
 ```
 
-## 📝Governance
+Signing info
 
-**View all proposals**
-
+```bash
+wardend q slashing signing-info $(wardend tendermint show-validator)
 ```
+
+### Governance <a href="#governance" id="governance"></a>
+
+Create New Text Proposal
+
+```bash
+wardend  tx gov submit-proposal \
+--title "" \
+--description "" \
+--deposit 1000000uward \
+--type Text \
+--from $WALLET \
+--gas auto --gas-adjustment 1.5 --fees 600uward \
+-y 
+```
+
+Proposals List
+
+```bash
 wardend query gov proposals
 ```
 
-**View specific proposal**
+View proposal
 
-```
+```bash
 wardend query gov proposal 1
 ```
 
-**Vote yes**
+Vote
 
-```
-wardend tx gov vote 1 yes --from Wallet_Name --gas 350000  --chain-id=alfama -y
-```
-
-**Vote no**
-
-```
-wardend tx gov vote 1 no --from Wallet_Name --gas 350000  --chain-id=alfama -y
-```
-
-**Vote abstain**
-
-```
-wardend tx gov vote 1 abstain --from Wallet_Name --gas 350000  --chain-id=alfama -y
-```
-
-**Vote no\_with\_veto**
-
-```
-wardend tx gov vote 1 no_with_veto --from Wallet_Name --gas 350000  --chain-id=alfama -y
+```bash
+wardend tx gov vote 1 yes --from $WALLET --chain-id buenavista-1  --gas auto --gas-adjustment 1.5 --fees 600uward -y
 ```
