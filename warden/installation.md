@@ -33,17 +33,19 @@ go version
 ### Install Node
 
 ```
-cd $HOME && mkdir -p go/bin/
-git clone --depth 1 --branch v0.1.0 https://github.com/warden-protocol/wardenprotocol/
-cd  wardenprotocol/warden/cmd/wardend
-go build
+cd $HOME
+rm -rf wardenprotocol
+git clone https://github.com/warden-protocol/wardenprotocol.git
+cd wardenprotocol
+git checkout v0.3.0
+make install-wardend
 sudo mv wardend $HOME/go/bin/
 ```
 
 ## **Initialize Node**
 
 ```
-wardend init MyNode --chain-id alfama
+wardend init MyNode --chain-id buenavista-1 
 ```
 
 ### Download genesis and addrbook
