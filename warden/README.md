@@ -18,9 +18,9 @@ description: >-
 
 
 
-| Binary Name | Wasm  | SDK version |
-| ----------- | ----- | ----------- |
-| wardend     | xxxxx | xxxxx       |
+| Binary Name | Wasm    | SDK version |
+| ----------- | ------- | ----------- |
+| wardend     | Enabled | v0.50.5     |
 
 {% tabs %}
 {% tab title="RPC" %}
