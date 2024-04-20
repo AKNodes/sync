@@ -1,6 +1,6 @@
 # Useful commands
 
-### <mark style="color:blue;">Service operations</mark> ⚙️ <a href="#service-operations" id="service-operations"></a>
+### Service operations ⚙️ <a href="#service-operations" id="service-operations"></a>
 
 Check logs
 
@@ -50,16 +50,10 @@ Disable Service
 sudo systemctl disable mantrachaind
 ```
 
-Sync info
-
-```bash
-mantrachaind status 2>&1 | jq .SyncInfo
-```
-
 Node info
 
 ```bash
-mantrachaind status 2>&1 | jq .NodeInfo
+mantrachaind status 2>&1 | jq
 ```
 
 Your node peer
@@ -68,7 +62,7 @@ Your node peer
 echo $(mantrachaind tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.mantrachain/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
-### <mark style="color:purple;">Key management</mark> <a href="#key-management" id="key-management"></a>
+### Key management <a href="#key-management" id="key-management"></a>
 
 Add New Wallet
 
@@ -97,7 +91,7 @@ mantrachaind keys delete $WALLET
 Check Balance
 
 ```bash
-mantrachaind q bank balances $(mantrachaind keys show $WALLET -a)
+mantrachaind q bank balances $WALLET_ADDRESS 
 ```
 
 Export Key (save to wallet.backup)
@@ -106,27 +100,33 @@ Export Key (save to wallet.backup)
 mantrachaind keys export $WALLET
 ```
 
+View EVM Prived Key
+
+```bash
+mantrachaind keys unsafe-export-eth-key $WALLET
+```
+
 Import Key (restore from wallet.backup)
 
 ```bash
 mantrachaind keys import $WALLET wallet.backup
 ```
 
-### <mark style="color:orange;">Tokens</mark> <a href="#tokens" id="tokens"></a>
+### Tokens <a href="#tokens" id="tokens"></a>
 
 Withdraw all rewards
 
 ```bash
-mantrachaind tx distribution withdraw-all-rewards --from $WALLET --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5
+mantrachaind tx distribution withdraw-all-rewards --from $WALLET --chain-id mantra-hongbai-1 --gas auto --gas-adjustment 1.5 --fees 50uom 
 ```
 
 Withdraw rewards and commission from your validator
 
 ```bash
-mantrachaind tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id mantra-hongbai-1 --gas auto --gas-adjustment 1.5 --fees 50uom -y 
 ```
 
-Check your balance  &#x20;
+Check your balance
 
 ```bash
 mantrachaind query bank balances $WALLET_ADDRESS
@@ -135,40 +135,40 @@ mantrachaind query bank balances $WALLET_ADDRESS
 Delegate to Yourself
 
 ```bash
-mantrachaind tx staking delegate $(mantrachaind keys show $WALLET --bech val -a) 1000000uaum --from $WALLET --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx staking delegate $(mantrachaind keys show $WALLET --bech val -a) 1000000uom --from $WALLET --chain-id mantra-hongbai-1 --gas auto --gas-adjustment 1.5 --fees 50uom -y 
 ```
 
 Delegate
 
 ```bash
-mantrachaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000uaum --from $WALLET --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000uom --from $WALLET --chain-id mantra-hongbai-1 --gas auto --gas-adjustment 1.5 --fees 50uom -y 	
 ```
 
 Redelegate Stake to Another Validator
 
 ```bash
-mantrachaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000uaum --from $WALLET --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000uom --from $WALLET --chain-id mantra-hongbai-1 --gas auto --gas-adjustment 1.5 --fees 50uom -y 
 ```
 
 Unbond
 
 ```bash
-mantrachaind tx staking unbond $(mantrachaind keys show $WALLET --bech val -a) 1000000uaum --from $WALLET --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx staking unbond $(mantrachaind keys show $WALLET --bech val -a) 1000000uom --from $WALLET --chain-id mantra-hongbai-1 --gas auto --gas-adjustment 1.5 --fees 50uom -y 
 ```
 
 Transfer Funds
 
 ```bash
-mantrachaind tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000uaum --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000uom --gas auto --gas-adjustment 1.5 --fees 50uom -y 
 ```
 
-### <mark style="color:red;">Validator operations</mark> <a href="#validator-operations" id="validator-operations"></a>
+### Validator operations <a href="#validator-operations" id="validator-operations"></a>
 
 Create New Validator
 
 ```bash
 mantrachaind tx staking create-validator \
---amount 1000000uaum \
+--amount 1000000uom \
 --from $WALLET \
 --commission-rate 0.1 \
 --commission-max-rate 0.2 \
@@ -177,10 +177,10 @@ mantrachaind tx staking create-validator \
 --pubkey $(mantrachaind tendermint show-validator) \
 --moniker "$MONIKER" \
 --identity "" \
---details "xxxxxxxxx" \
---chain-id mantrachain-testnet-1 \
---gas auto --gas-adjustment 1.5 --fees 50uaum \
--y
+--details "I love blockchain ❤️" \
+--chain-id mantra-hongbai-1 \
+--gas auto --gas-adjustment 1.5 --fees 50uom \
+-y \
 ```
 
 Edit Existing Validator
@@ -190,41 +190,47 @@ mantrachaind tx staking edit-validator \
 --commission-rate 0.1 \
 --new-moniker "$MONIKER" \
 --identity "" \
---details "xxxxxxxxx" \
+--details "I love blockchain ❤️" \
 --from $WALLET \
---chain-id mantrachain-testnet-1 \
---gas auto --gas-adjustment 1.5 --fees 50uaum \
--y
+--chain-id mantra-hongbai-1 \
+--gas auto --gas-adjustment 1.5 --fees 50uom \
+-y \
 ```
 
 Validator info
 
 ```bash
-mantrachaind status 2>&1 | jq .ValidatorInfo
+mantrachaind status 2>&1 | jq
 ```
 
 Validator Details
 
 ```bash
-mantrachaind q staking validator $(mantrachaind keys show $WALLET --bech val -a)
+mantrachaind q staking validator $(mantrachaind keys show $WALLET --bech val -a) 
 ```
 
 Jailing info
 
 ```bash
-mantrachaind q slashing signing-info $(mantrachaind tendermint show-validator)
+mantrachaind q slashing signing-info $(mantrachaind tendermint show-validator) 
+```
+
+Slashing parameters
+
+```bash
+mantrachaind q slashing params 
 ```
 
 Unjail validator
 
 ```bash
-mantrachaind tx slashing unjail --from $WALLET --chain-id mantrachain-testnet-1 --gas auto --gas-adjustment 1.5 -y
+mantrachaind tx slashing unjail --from $WALLET --chain-id mantra-hongbai-1 --gas auto --gas-adjustment 1.5 --fees 50uom -y 
 ```
 
 Active Validators List
 
 ```bash
-mantrachaind q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " 	 " + .description.moniker' | sort -gr | nl
+mantrachaind q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " 	 " + .description.moniker' | sort -gr | nl 
 ```
 
 Check Validator key
@@ -236,10 +242,10 @@ Check Validator key
 Signing info
 
 ```bash
-mantrachaind q slashing signing-info $(mantrachaind tendermint show-validator)
+mantrachaind q slashing signing-info $(mantrachaind tendermint show-validator) 
 ```
 
-### <mark style="color:yellow;">Governance</mark> <a href="#governance" id="governance"></a>
+### Governance <a href="#governance" id="governance"></a>
 
 Create New Text Proposal
 
@@ -247,42 +253,28 @@ Create New Text Proposal
 mantrachaind  tx gov submit-proposal \
 --title "" \
 --description "" \
---deposit 1000000uaum \
+--deposit 1000000uom \
 --type Text \
 --from $WALLET \
---gas auto --gas-adjustment 1.5 \
--y 
+--gas auto --gas-adjustment 1.5 --fees 50uom \
+-y \
+ 
 ```
 
 Proposals List
 
 ```bash
-mantrachaind query gov proposals
+mantrachaind query gov proposals 
 ```
-
-Proposal IDProposal optionYesNoNo with vetoAbstain
 
 View proposal
 
 ```bash
-mantrachaind query gov proposal 1
+mantrachaind query gov proposal 1 
 ```
 
 Vote
 
 ```bash
-mantrachaind tx gov vote 1 yes --from $WALLET --chain-id mantrachain-testnet-1  --gas auto --gas-adjustment 1.5 -y
-```
-
-
-
-#### <mark style="background-color:green;">Delete Node</mark>
-
-```
-sudo systemctl stop mantrachaind
-sudo systemctl disable mantrachaind
-sudo rm -rf /etc/systemd/system/mantrachaind.service
-sudo rm $(which mantrachaind)
-sudo rm -rf $HOME/.mantrachain
-sed -i "/MANTRA_/d" $HOME/.bash_profile
+mantrachaind tx gov vote 1 yes --from $WALLET --chain-id mantra-hongbai-1  --gas auto --gas-adjustment 1.5 --fees 50uom -y 
 ```

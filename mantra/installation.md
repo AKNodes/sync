@@ -25,7 +25,7 @@ sudo apt-get install git curl build-essential make jq gcc snapd chrony lz4 tmux 
 rm -rf $HOME/go
 sudo rm -rf /usr/local/go
 cd $HOME
-curl https://dl.google.com/go/go1.20.5.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
+curl https://dl.google.com/go/1.21.6.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
 cat <<'EOF' >>$HOME/.profile
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -40,7 +40,7 @@ go version
 
 ```
 cd $HOME
-sudo wget -O /usr/lib/libwasmvm.x86_64.so https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so
+sudo wget -O /usr/lib/libwasmvm.x86_64.so https://github.com/CosmWasm/wasmvm/releases/download/v1.3.1/libwasmvm.x86_64.so
 wget https://snapshots.aknodes.net/snapshots/mantrachain/mantrachaind-linux-amd64.zip
 unzip mantrachaind-linux-amd64.zip
 rm mantrachaind-linux-amd64.zip
@@ -51,7 +51,7 @@ mv mantrachaind $HOME/go/bin
 ## **Initialize Node**
 
 ```
-mantrachaind init "$MONIKER" --chain-id=mantrachain-testnet-1
+mantrachaind init "$MONIKER" --chain-id=mantra-hongbai-1
 ```
 
 ### Download genesis and addrbook
