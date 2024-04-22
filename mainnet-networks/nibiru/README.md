@@ -27,6 +27,6 @@ https://api.nibiru.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
-grpc.nibiru-mainnet.aknodes.net:6990
+grpc.nibiru.aknodes.net:6990
 {% endtab %}
 {% endtabs %}
