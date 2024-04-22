@@ -19,11 +19,11 @@ description: >-
 
 {% tabs %}
 {% tab title="RPC" %}
-https://rpc.nibiru-mainnet.aknodes.net
+https://rpc.nibiru.aknodes.net
 {% endtab %}
 
 {% tab title="API" %}
-https://api.nibiru-mainnet.aknodes.net
+https://api.nibiru.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
