@@ -51,3 +51,15 @@ mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validato
 
 sudo systemctl restart nibid && sudo journalctl -u nibid -f
 ```
+
+
+
+### Pricefeeder upgrade&#x20;
+
+```
+systemctl stop pricefeeder.service
+
+curl -s https://get.nibiru.fi/pricefeeder@v1.0.2! | bash
+
+systemctl restart pricefeeder.service && journalctl -u pricefeeder.service -f
+```
