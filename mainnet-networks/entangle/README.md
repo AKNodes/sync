@@ -7,9 +7,9 @@ description: >-
 
 # Entangle
 
-<figure><img src="../.gitbook/assets/bbb-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/bbb-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>entangle_33133-1</td><td>v1.0.1</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>entangle_33033-1</td><td>v1.0.1</td></tr></tbody></table>
 
 
 
@@ -27,6 +27,7 @@ https://api.entangle.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
-grpc.entangle.aknodes.net:10790
+grpc.entangle.aknodes.net:14490
 {% endtab %}
 {% endtabs %}
+

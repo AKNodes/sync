@@ -117,13 +117,13 @@ entangled keys import $WALLET wallet.backup
 Withdraw all rewards
 
 ```bash
-entangled tx distribution withdraw-all-rewards --from $WALLET --chain-id entangle_33133-1 --gas=700000 --gas-prices="20aNGL"
+entangled tx distribution withdraw-all-rewards --from $WALLET --chain-id entangle_33033-1 --gas=700000 --gas-prices="20aNGL"
 ```
 
 Withdraw rewards and commission from your validator
 
 ```bash
-entangled tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id entangle_33133-1 --gas=700000 --gas-prices="20aNGL" -y
+entangled tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id entangle_33033-1 --gas=700000 --gas-prices="20aNGL" -y
 ```
 
 Check your balance
@@ -135,13 +135,13 @@ entangled query bank balances $WALLET_ADDRESS
 Delegate to Yourself
 
 ```bash
-entangled tx staking delegate $(entangled keys show $WALLET --bech val -a) 1000000aNGL --from $WALLET --chain-id entangle_33133-1 --gas=700000 --gas-prices="20aNGL" -y
+entangled tx staking delegate $(entangled keys show $WALLET --bech val -a) 1000000aNGL --from $WALLET --chain-id entangle_33033-1 --gas=700000 --gas-prices="20aNGL" -y
 ```
 
 Delegate
 
 ```bash
-entangled tx staking delegate <TO_VALOPER_ADDRESS> 1000000aNGL --from $WALLET --chain-id entangle_33133-1 --gas=700000 --gas-prices="20aNGL" -y
+entangled tx staking delegate <TO_VALOPER_ADDRESS> 1000000aNGL --from $WALLET --chain-id entangle_33033-1 --gas=700000 --gas-prices="20aNGL" -y
 ```
 
 Redelegate Stake to Another Validator
@@ -153,7 +153,7 @@ entangled tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000aNG
 Unbond
 
 ```bash
-entangled tx staking unbond $(entangled keys show $WALLET --bech val -a) 1000000aNGL --from $WALLET --chain-id entangle_33133-1 --gas=700000 --gas-prices="20aNGL" -y
+entangled tx staking unbond $(entangled keys show $WALLET --bech val -a) 1000000aNGL --from $WALLET --chain-id entangle_33033-1 --gas=700000 --gas-prices="20aNGL" -y
 ```
 
 Transfer Funds
@@ -178,7 +178,7 @@ entangled tx staking create-validator \
 --moniker "$MONIKER" \
 --identity "" \
 --details "xxxxxxxxx" \
---chain-id entangle_33133-1 \
+--chain-id entangle_33033-1 \
 --gas=700000 --gas-prices="20aNGL" \
 -y
 ```
@@ -192,7 +192,7 @@ entangled tx staking edit-validator \
 --identity "" \
 --details "xxxxxxxxxxxxx" \
 --from $WALLET \
---chain-id entangle_33133-1 \
+--chain-id entangle_33033-1 \
 --gas=700000 --gas-prices="20aNGL" \
 -y
 ```
@@ -218,7 +218,7 @@ entangled q slashing signing-info $(entangled tendermint show-validator)
 Unjail validator
 
 ```bash
-entangled tx slashing unjail --from $WALLET --chain-id entangle_33133-1 --gas=700000 --gas-prices="20aNGL" -y
+entangled tx slashing unjail --from $WALLET --chain-id entangle_33033-1 --gas=700000 --gas-prices="20aNGL" -y
 ```
 
 Active Validators List
@@ -271,5 +271,5 @@ entangled query gov proposal 1
 Vote
 
 ```bash
-entangled tx gov vote 1 yes --from $WALLET --chain-id entangle_33133-1  --gas=700000 --gas-prices="20aNGL" -y
+entangled tx gov vote 1 yes --from $WALLET --chain-id entangle_33033-1  --gas=700000 --gas-prices="20aNGL" -y
 ```

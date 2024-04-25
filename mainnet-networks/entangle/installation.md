@@ -25,7 +25,7 @@ sudo apt-get install git curl build-essential make jq gcc snapd chrony lz4 tmux 
 rm -rf $HOME/go
 sudo rm -rf /usr/local/go
 cd $HOME
-curl https://dl.google.com/go/go1.20.5.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
+curl https://dl.google.com/go/go1.21.3.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
 cat <<'EOF' >>$HOME/.profile
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -54,7 +54,7 @@ make install
 ## **Initialize Node**
 
 ```
-entangled init "$MONIKER" --chain-id=entangle_33133-1
+entangled init "$MONIKER" --chain-id=entangle_33033-1
 ```
 
 ### Download genesis and addrbook
@@ -75,7 +75,7 @@ Description=entangled Daemon
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=$(which entangled) start
+ExecStart=$(which entangled) start --home /root/.entangled --chain-id entangle_33033-1
 Restart=always
 RestartSec=3
 LimitNOFILE=65535
