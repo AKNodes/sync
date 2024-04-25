@@ -47,7 +47,7 @@ git clone https://github.com/haqq-network/haqq.git
 
 cd haqq
 
-git checkout v1.6.2
+git checkout v1.7.4
 
 make install
 ```
