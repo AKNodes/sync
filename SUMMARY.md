@@ -1,6 +1,6 @@
 # Table of contents
 
-* [By APPIE](README.md)
+* [Links](README.md)
   * [Explorer](https://explorer.aknodes.com)
   * [Website](https://aknodes.com)
 * [💻 TESTNET NETWORKS](testnet-networks.md)
