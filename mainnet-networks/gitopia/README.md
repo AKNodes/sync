@@ -31,7 +31,7 @@ https://rpc.gitopia.aknodes.net
 https://api.gitopia.aknodes.net
 {% endtab %}
 
-{% tab title="Untitled" %}
+{% tab title="gRPC" %}
 grpc.gitopia.aknodes.net:14190
 {% endtab %}
 {% endtabs %}
