@@ -18,9 +18,9 @@ description: >-
 
 
 
-| Binary Name | Wasm    | SDK version |
-| ----------- | ------- | ----------- |
-| gitopia     | Enabled | v0.47.5     |
+| Binary Name | Wasm     | SDK version |
+| ----------- | -------- | ----------- |
+| gitopia     | Disabled | v0.46.13    |
 
 {% tabs %}
 {% tab title="RPC" %}
