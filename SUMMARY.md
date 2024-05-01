@@ -139,6 +139,11 @@
   * [Upgrade](mainnet-networks/mun/upgrade.md)
   * [Sync](mainnet-networks/mun/sync.md)
   * [Useful commands](mainnet-networks/mun/useful-commands.md)
+* [Gitopia](mainnet-networks/gitopia/README.md)
+  * [Installation](mainnet-networks/gitopia/installation.md)
+  * [Upgrade](mainnet-networks/gitopia/upgrade.md)
+  * [Sync](mainnet-networks/gitopia/sync.md)
+  * [Useful Commands](mainnet-networks/gitopia/useful-commands.md)
 
 ## 💻 OTHER PROJETCS
 
