@@ -96,6 +96,11 @@
   * [Upgrade](galactica/upgrade.md)
   * [Sync](galactica/sync.md)
   * [Usefull Commands](galactica/usefull-commands.md)
+* [Initia](initia/README.md)
+  * [Installation](initia/installation.md)
+  * [Upgrade](initia/upgrade.md)
+  * [Sync](initia/sync.md)
+  * [Useful Commands](initia/useful-commands.md)
 
 ## 💻 MAINNET NETWORKS
 
