@@ -101,6 +101,11 @@
   * [Upgrade](initia/upgrade.md)
   * [Sync](initia/sync.md)
   * [Useful Commands](initia/useful-commands.md)
+* [Airchains](airchains/README.md)
+  * [Installation](airchains/installation.md)
+  * [Upgrade](airchains/upgrade.md)
+  * [Sync](airchains/sync.md)
+  * [Useful Commands](airchains/useful-commands.md)
 
 ## 💻 MAINNET NETWORKS
 
