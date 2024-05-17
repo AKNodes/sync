@@ -8,7 +8,7 @@ description: >-
 
 ## Sync
 
-**Updated every 6 hours**
+**Updated every 6 hours  ( 417 MB )**
 
 Stop the node and remove the old data file ( paritydb )
 
