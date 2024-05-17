@@ -7,7 +7,13 @@ description: >-
 
 # Nibiru
 
-<figure><img src="../../.gitbook/assets/hg.png" alt="" width="125"><figcaption></figcaption></figure>
+
+
+
+
+<figure><img src="../../.gitbook/assets/nibi-logomark-main.838cd98c.svg" alt="" width="80"><figcaption></figcaption></figure>
+
+
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>cataclysm-1</td><td>v1.3.0</td></tr></tbody></table>
 
