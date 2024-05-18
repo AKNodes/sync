@@ -159,6 +159,8 @@
 
 * [Massa Labs](other-projetcs/massa-labs/README.md)
   * [Installation](other-projetcs/massa-labs/installation.md)
-* [Avail](other-projetcs/avail.md)
+* [Avail](other-projetcs/avail/README.md)
+  * [Installation](other-projetcs/avail/installation.md)
+  * [Sync](other-projetcs/avail/sync.md)
 * [Nulink](other-projetcs/nulink.md)
 * [MOI](other-projetcs/moi.md)

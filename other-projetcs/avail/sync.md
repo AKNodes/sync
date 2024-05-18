@@ -1,12 +1,4 @@
----
-description: >-
-  Avail is a Web3 infrastructure layer that allows modular execution layers to
-  scale and interoperate in a trust minimized way.
----
-
-# Avail
-
-## Sync
+# Sync
 
 **Updated every 6 hours  ( 620 MB )**
 
