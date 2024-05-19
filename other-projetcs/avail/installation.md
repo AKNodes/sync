@@ -45,7 +45,9 @@ wget https://github.com/availproject/avail/releases/download/v2.2.2.0-rc1/x86_64
 tar -xf x86_64-ubuntu-2204-avail-node.tar.gz
 ```
 
-### Create the service file
+### Create the service file&#x20;
+
+Replace YOURVALIDATORNAME with your moniker
 
 ```
 sudo tee /etc/systemd/system/availd.service > /dev/null <<EOF

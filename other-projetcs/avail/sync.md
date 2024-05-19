@@ -1,8 +1,8 @@
 # Sync
 
-**Updated every 12 hours  ( 620 MB )**
+**Updated every 12 hours  ( 775 MB )**
 
-Stop the node and remove the old data file ( paritydb )
+Stop the node and remove the old data file make sure to find the location of the file before using the command ( paritydb )
 
 ```
 sudo systemctl stop availd.service
