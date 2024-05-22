@@ -106,6 +106,7 @@
   * [Upgrade](airchains/upgrade.md)
   * [Sync](airchains/sync.md)
   * [Useful Commands](airchains/useful-commands.md)
+  * [Migrate Validator](airchains/migrate-validator.md)
 
 ## 💻 MAINNET NETWORKS
 
