@@ -8,7 +8,7 @@ description: >-
 
 <figure><img src="../.gitbook/assets/lava.png" alt="" width="110"><figcaption></figcaption></figure>
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>lava-testnet-2</td><td>v1.2.0</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>lava-testnet-2</td><td>v2.0.0</td></tr></tbody></table>
 
 
 
