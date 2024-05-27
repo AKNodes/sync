@@ -76,6 +76,7 @@
   * [Upgrade](crossfi/upgrade.md)
   * [Sync](crossfi/sync.md)
   * [Useful commands](crossfi/useful-commands.md)
+  * [Migrate validator](crossfi/migrate-validator.md)
 * [Hedge](hedge/README.md)
   * [Installation](hedge/installation.md)
   * [Upgrade](hedge/upgrade.md)
