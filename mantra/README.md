@@ -7,7 +7,9 @@ description: >-
 
 # Mantra
 
-<figure><img src="../.gitbook/assets/cc-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
+
+
+<figure><img src="../.gitbook/assets/mantra.jpg" alt="" width="100"><figcaption></figcaption></figure>
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>mantra-hongbai-1</td><td>v3.0.0</td></tr></tbody></table>
 
