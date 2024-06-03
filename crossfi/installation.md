@@ -57,11 +57,11 @@ crossfid config chain-id crossfi-evm-testnet-1
 
 ### Download genesis and addrbook
 
-<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/crossfi/genesis.json > $HOME/.mineplex-chain/config/genesis.json
+<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/crossfi/genesis.json > $HOME/.crossfid/config/genesis.json
 </strong></code></pre>
 
 ```
-curl -Ls https://snapshots.aknodes.net/snapshots/crossfi/addrbook.json > $HOME/.mineplex-chain/config/addrbook.json
+curl -Ls https://snapshots.aknodes.net/snapshots/crossfi/addrbook.json > $HOME/.crossfid/config/addrbook.json
 ```
 
 ### **Create Service**
@@ -88,7 +88,7 @@ EOF
 
 ```
 crossfid tendermint unsafe-reset-all --home $HOME/.mineplex-chain --keep-addr-book 
-curl https://snapshots.aknodes.net/snapshots/crossfi/snapshot-crossfi.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.mineplex-chain
+curl https://snapshots.aknodes.net/snapshots/crossfi/snapshot-crossfi.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.crossfid
 ```
 
 ### Start the node
