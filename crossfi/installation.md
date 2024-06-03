@@ -39,14 +39,12 @@ go version
 ### Install Node
 
 ```
-mkdir -p $HOME/crossfi && cd $HOME/crossfi
-#mkdir -p ~/go/bin
-
-wget https://github.com/crossfichain/crossfi-node/releases/download/v0.3.0-prebuild3/crossfi-node_0.3.0-prebuild3_linux_amd64.tar.gz
-tar -xvf crossfi-node_0.3.0-prebuild3_linux_amd64.tar.gz
-chmod +x $HOME/crossfi/bin/crossfid
-mv $HOME/crossfi/bin/crossfid $HOME/go/bin
-rm -rf crossfi-node_0.3.0-prebuild3_linux_amd64.tar.gz
+cd $HOME
+wget https://github.com/crossfichain/crossfi-node/releases/download/v0.3.0-prebuild9/crossfi-node_0.3.0-prebuild9_linux_amd64.tar.gz
+tar -xvf crossfi-node_0.3.0-prebuild9_linux_amd64.tar.gz
+chmod +x $HOME/bin/crossfid
+rm crossfi-node_0.3.0-prebuild9_linux_amd64.tar.gz
+sudo mv $HOME/bin/crossfid $(which crossfid)
 ```
 
 
