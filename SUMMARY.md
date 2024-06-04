@@ -154,5 +154,6 @@
 * [Avail](other-projetcs/avail/README.md)
   * [Installation](other-projetcs/avail/installation.md)
   * [Sync](other-projetcs/avail/sync.md)
+  * [Upgrade](other-projetcs/avail/upgrade.md)
 * [Nulink](other-projetcs/nulink.md)
 * [MOI](other-projetcs/moi.md)
