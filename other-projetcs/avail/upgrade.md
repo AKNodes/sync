@@ -8,8 +8,12 @@
 sudo systemctl stop availd.service
 ```
 
+<pre><code><strong>cd avail
+</strong></code></pre>
+
 ```
-cd avail
+sudo apt update
+sudo apt upgrade
 ```
 
 ### Remove avail-node and download the latest binary
