@@ -26,7 +26,7 @@ https://api.swisstronik.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
-grpc.swisstronik.aknodes.net:9090
+grpc.swisstronik.aknodes.net:9290
 {% endtab %}
 {% endtabs %}
 
