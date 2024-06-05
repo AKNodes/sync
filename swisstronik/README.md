@@ -6,6 +6,10 @@ description: >-
 
 # Swisstronik
 
+### Explorer
+
+{% embed url="https://explorer.aknodes.com/SWISSTRONIK-TESTNET/" %}
+
 ![](../.gitbook/assets/1673641806600.jpeg)
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>swisstronik_1291-1</td><td>v1.0.2</td></tr></tbody></table>
