@@ -7,9 +7,9 @@ description: >-
 
 # Nibiru
 
+### Explorer
 
-
-
+{% embed url="https://explorer.aknodes.com/NIBIRU-MAINNET/" %}
 
 <figure><img src="../../.gitbook/assets/nibi-logomark-main.838cd98c.svg" alt="" width="80"><figcaption></figcaption></figure>
 

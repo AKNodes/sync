@@ -6,7 +6,9 @@ description: >-
 
 # Hedge
 
+### Explorer
 
+{% embed url="https://explorer.aknodes.com/HEDGE-TESTNET/" %}
 
 ![](<../.gitbook/assets/IMG\_1397-removebg-preview (1).png>)
 

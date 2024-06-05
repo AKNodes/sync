@@ -6,7 +6,9 @@ description: >-
 
 # Warden
 
+### Explorer
 
+{% embed url="https://explorer.aknodes.com/WARDEN-TESTNET/" %}
 
 <figure><img src="../.gitbook/assets/158038121.jpeg" alt="" width="100"><figcaption></figcaption></figure>
 

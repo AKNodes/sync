@@ -6,9 +6,9 @@ description: >-
 
 # Airchains
 
+### Explorer
 
-
-
+{% embed url="https://explorer.aknodes.com/AIRCHAINS-TESTNET/" %}
 
 <figure><img src="../.gitbook/assets/images.jpg" alt="" width="113"><figcaption></figcaption></figure>
 

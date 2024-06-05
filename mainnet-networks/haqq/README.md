@@ -7,6 +7,10 @@ description: >-
 
 # Haqq
 
+### Explorer
+
+{% embed url="https://explorer.aknodes.com/HAQQ-MAINNET/" %}
+
 <figure><img src="../../.gitbook/assets/za-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>haqq_11235-1</td><td>v1.7.4</td></tr></tbody></table>

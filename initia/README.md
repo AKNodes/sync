@@ -7,7 +7,9 @@ description: >-
 
 # Initia
 
+### Explorer
 
+{% embed url="https://explorer.aknodes.com/INITIA-TESTNET" %}
 
 <figure><img src="../.gitbook/assets/ayyW6i94_400x400.jpg" alt="" width="100"><figcaption></figcaption></figure>
 

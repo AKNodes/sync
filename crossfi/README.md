@@ -7,6 +7,10 @@ description: >-
 
 # Crossfi
 
+### Explorer
+
+{% embed url="https://explorer.aknodes.com/CROSSFI-TESTNET" %}
+
 ![](../.gitbook/assets/images.jpeg)
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>crossfi-evm-testnet-1</td><td>v0.3.0-prebuild3</td></tr></tbody></table>

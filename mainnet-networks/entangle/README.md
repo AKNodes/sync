@@ -7,6 +7,10 @@ description: >-
 
 # Entangle
 
+### Explorer
+
+{% embed url="https://explorer.aknodes.com/ENTANGLE-MAINNET/" %}
+
 <figure><img src="../../.gitbook/assets/bbb-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>entangle_33033-1</td><td>v1.0.1</td></tr></tbody></table>

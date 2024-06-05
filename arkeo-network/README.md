@@ -7,7 +7,15 @@ description: >-
 
 # Arkeo network
 
-<figure><img src="../.gitbook/assets/artela_network_logo__1_-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
+
+
+### Explorer
+
+{% embed url="https://explorer.aknodes.com/ARKEO-TESTNET" %}
+
+
+
+<figure><img src="../.gitbook/assets/arkeo.png" alt="" width="100"><figcaption></figcaption></figure>
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>arkeo</td><td>1</td></tr></tbody></table>
 

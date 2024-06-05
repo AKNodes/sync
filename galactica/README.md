@@ -7,7 +7,9 @@ description: >-
 
 # Galactica
 
+### Explorer
 
+{% embed url="https://explorer.aknodes.com/galactica/" %}
 
 
 
