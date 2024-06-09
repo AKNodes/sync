@@ -26,12 +26,12 @@ rpc_port=$(grep -m 1 -oP '^laddr = "\K[^"]+' "$HOME/.lava/config/config.toml" | 
 tmux new -s lava-upgrade "sudo bash -c 'curl -s https://raw.githubusercontent.com/appieasahbie/testnet-guides/main/utils/autoupgrade/upgrade.sh | bash -s -- -u \"1369750\" -b lavad -n \"$HOME/lavad\" -o \"$old_bin_path\" -h \"$home_path\" -p \"https://api.lava.aknodes.net//cosmos/gov/v1/proposals/203\" -r \"$rpc_port\"'"
 ```
 
-## Upgrade Lavap to v1.0.2
+## Upgrade Lavap to v1.2.4
 
 
 
 ```
-wget -O lavap https://github.com/lavanet/lava/releases/download/v1.0.2/lavap-v1.0.2-linux-amd64
+wget -O lavap https://github.com/lavanet/lava/releases/download/v1.2.4/lavap-v1.2.4-linux-amd64
 chmod +x lavap
 mv lavap $(which lavap)
 sudo systemctl restart lavap && sudo journalctl -u lavap -f -o cat
