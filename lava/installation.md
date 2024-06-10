@@ -45,7 +45,7 @@ cd || return
 rm -rf lava
 git clone https://github.com/lavanet/lava
 cd lava || return
-git checkout v2.0.0
+git checkout v2.1.1
 make install
 
 make build
