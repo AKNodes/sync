@@ -12,7 +12,7 @@ description: >-
 
 <figure><img src="../../.gitbook/assets/zaaz-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>planq_7070-2</td><td>v1.0.7</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>planq_7070-2</td><td>v1.1.0</td></tr></tbody></table>
 
 
 

@@ -47,7 +47,7 @@ git clone https://github.com/planq-network/planq.git
 
 cd planq
 
-git checkout v1.0.7
+git checkout v1.1.0
 
 make build
 
