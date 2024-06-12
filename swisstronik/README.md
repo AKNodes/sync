@@ -32,5 +32,13 @@ https://api.swisstronik.aknodes.net
 {% tab title="gRPC" %}
 grpc.swisstronik.aknodes.net:9290
 {% endtab %}
+
+{% tab title="WSS" %}
+wss://ws-jsonrpc-swisstronik.aknodes.net:443
+{% endtab %}
+
+{% tab title="JSONRPC" %}
+[https://jsonrpc-swisstronik.aknodes.net/](https://jsonrpc-swisstronik.aknodes.net/)
+{% endtab %}
 {% endtabs %}
 
