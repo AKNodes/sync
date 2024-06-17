@@ -100,4 +100,3 @@ sudo systemctl restart lavad
 journalctl -u lavad -f
 ```
 
-[buy me a cup of coffe](https://www.paypal.com/paypalme/AbdelAkridi?country.x=NL\&locale.x=en\_US)
