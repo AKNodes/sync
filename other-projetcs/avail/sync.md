@@ -1,6 +1,6 @@
 # Sync
 
-**Updated every 12 hours  ( 1.7GB )**
+**Updated every 12 hours  ( 3.2GB )**
 
 Stop the node and remove the old data file make sure to find the location of the file before using the command ( paritydb )
 
