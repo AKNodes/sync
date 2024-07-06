@@ -17,7 +17,7 @@ description: >-
 
 
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>initiation-1 </td><td>v0.2.14</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>initiation-1 </td><td>v0.2.21</td></tr></tbody></table>
 
 
 
