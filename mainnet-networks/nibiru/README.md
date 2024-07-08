@@ -15,7 +15,7 @@ description: >-
 
 
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>cataclysm-1</td><td>v1.3.0</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>cataclysm-1</td><td>v1.5.0</td></tr></tbody></table>
 
 
 
