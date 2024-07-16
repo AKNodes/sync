@@ -36,13 +36,13 @@ cd avail
 ### **Download the binary**
 
 ```
-wget https://github.com/availproject/avail/releases/download/v2.2.2.0-rc1/x86_64-ubuntu-2204-avail-node.tar.gz
+wget https://github.com/availproject/avail/releases/download/v2.2.4.0-rc1/x86_64-ubuntu-2404-avail-node.tar.gz
 ```
 
 ### Extract the file
 
 ```
-tar -xf x86_64-ubuntu-2204-avail-node.tar.gz
+tar -xf x86_64-ubuntu-2404-avail-node.tar.gz
 ```
 
 ### Create the service file&#x20;
