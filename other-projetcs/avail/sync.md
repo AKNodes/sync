@@ -31,5 +31,6 @@ lz4 -c -d snapshot-avail-turing.lz4  | tar -x -C /root/avail/node-data/chains/av
 Restart the node and see the logs
 
 ```
-sudo systemctl restart availd.service & journalctl -u availd.service -u
+sudo systemctl restart availd.service & journalctl -u availd.service -f
 ```
+
