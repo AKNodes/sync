@@ -146,6 +146,11 @@
   * [Upgrade](mainnet-networks/gitopia/upgrade.md)
   * [Sync](mainnet-networks/gitopia/sync.md)
   * [Useful Commands](mainnet-networks/gitopia/useful-commands.md)
+* [Lava](mainnet-networks/lava/README.md)
+  * [Installation](mainnet-networks/lava/installation.md)
+  * [Upgrade](mainnet-networks/lava/upgrade.md)
+  * [Sync](mainnet-networks/lava/sync.md)
+  * [Useful commands](mainnet-networks/lava/useful-commands.md)
 
 ## 💻 OTHER PROJETCS
 
