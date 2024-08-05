@@ -26,7 +26,7 @@ sudo journalctl -u junctiond -f --no-hostname -o cat
 sudo systemctl stop junctiond
 
 cp $HOME/.junction/data/priv_validator_state.json $HOME/.junction/priv_validator_state.json.backup
-junctiond tendermint unsafe-reset-all --home $HOME/.lava
+junctiond tendermint unsafe-reset-all --home $HOME/.junction
 
 peers="9f785525827dc317d16a66605195cf5dfbe7276d@167.235.14.83:34656"  
 SNAP_RPC="https://rpc.junction.aknodes.net:443"

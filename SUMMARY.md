@@ -103,6 +103,11 @@
   * [Sync](airchains/sync.md)
   * [Useful Commands](airchains/useful-commands.md)
   * [Migrate Validator](airchains/migrate-validator.md)
+* [Symphony](symphony/README.md)
+  * [Installation](symphony/installation.md)
+  * [Upgrade](symphony/upgrade.md)
+  * [Sync](symphony/sync.md)
+  * [Useful Commands](symphony/useful-commands.md)
 
 ## 💻 MAINNET NETWORKS
 
