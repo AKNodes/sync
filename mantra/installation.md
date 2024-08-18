@@ -40,7 +40,7 @@ go version
 
 ```
 cd $HOME
-sudo wget -O /usr/lib/libwasmvm.x86_64.so https://github.com/CosmWasm/wasmvm/releases/download/v1.3.1/libwasmvm.x86_64.so
+sudo wget -O /usr/lib/libwasmvm.x86_64.so https://github.com/CosmWasm/wasmvm/releases/download/v3.0.0/libwasmvm.x86_64.so
 wget https://snapshots.aknodes.net/snapshots/mantrachain/mantrachaind-linux-amd64.zip
 unzip mantrachaind-linux-amd64.zip
 rm mantrachaind-linux-amd64.zip
