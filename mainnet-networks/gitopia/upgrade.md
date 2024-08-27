@@ -9,6 +9,8 @@ git clone https://github.com/gitopia/gitopia.git
 cd gitopia
 git checkout v4.0.0
 make build
+sudo systemctl restart gitopiad
+sudo journalctl -u gitopiad -f --no-hostname -o cat
 ```
 
 
