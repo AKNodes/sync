@@ -43,11 +43,11 @@ cd || return
 
 rm -rf okp4d
 
-git clone https://github.com/okp4/okp4d.git
+git clone https://github.com/axone-protocol/axoned
 
-cd okp4d || return
+cd axoned || return
 
-git checkout v5.0.0
+git checkout v10.0.0
 
 make install
 
@@ -56,28 +56,28 @@ make install
 ## **Initialize Node**
 
 ```
-okp4d init "$MONIKER" --chain-id=okp4-nemeton-1
+okp4d init "$MONIKER" --chain-id=axone-dentrite-1
 ```
 
 ### Download genesis and addrbook
 
-<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/okp4/genesis.json > $HOME/.okp4d/config/genesis.json
+<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/axone/genesis.json > $HOME/.axoned/config/genesis.json
 </strong></code></pre>
 
 ```
-curl -Ls https://snapshots.aknodes.net/snapshots/okp4/addrbook.json > $HOME/.okp4d/config/addrbook.json
+curl -Ls https://snapshots.aknodes.net/snapshots/axone/addrbook.json > $HOME/.axoned/config/addrbook.json
 ```
 
 ### **Create Service**
 
 ```
-sudo tee /etc/systemd/system/okp4d.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/axoned.service > /dev/null <<EOF
 [Unit]
-Description=okp4d Daemon
+Description=axoned Daemon
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=$(which okp4d) start
+ExecStart=$(which axoned) start
 Restart=always
 RestartSec=3
 LimitNOFILE=65535
@@ -85,21 +85,19 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable okp4d
+sudo systemctl enable axoned
 ```
 
 ### **Download Snapshot**
 
 ```
-okp4d tendermint unsafe-reset-all --home $HOME/.okp4d --keep-addr-book 
-curl https://snapshots.aknodes.net/snapshots/okp4/snapshot-okp4.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.okp4d
+axoned tendermint unsafe-reset-all --home $HOME/.axoned --keep-addr-book 
+curl https://snapshots.aknodes.net/snapshots/axone/snapshot-axone.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.axoned
 ```
 
 ### Start the node
 
 ```
-sudo systemctl restart okp4d
-journalctl -u okp4d -f
+sudo systemctl restart axoned
+journalctl -u axoned -f
 ```
-
-[buy me a cup of coffe](https://www.paypal.com/paypalme/AbdelAkridi?country.x=NL\&locale.x=en\_US)
