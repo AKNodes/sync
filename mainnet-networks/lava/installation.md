@@ -37,7 +37,7 @@ cd || return
 rm -rf lava
 git clone https://github.com/lavanet/lava.git
 cd lava || return
-git checkout v2.2.0
+git checkout v3.1.0
 make install
 ```
 
