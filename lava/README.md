@@ -12,9 +12,11 @@ description: >-
 
 {% embed url="https://explorer.aknodes.com/LAVA-TESTNET/" %}
 
+
+
 <figure><img src="../.gitbook/assets/lava.png" alt="" width="110"><figcaption></figcaption></figure>
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>lava-testnet-2</td><td>v2.1.3</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>lava-testnet-2</td><td>v3.1.0</td></tr></tbody></table>
 
 
 
@@ -35,3 +37,4 @@ https://api.lava.aknodes.net
 grpc.lava.aknodes.net:17090
 {% endtab %}
 {% endtabs %}
+

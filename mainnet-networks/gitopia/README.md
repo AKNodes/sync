@@ -16,7 +16,7 @@ description: >-
 
 
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>gitopia</td><td>v3.3.0</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>gitopia</td><td>v4.0.0</td></tr></tbody></table>
 
 
 

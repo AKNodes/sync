@@ -13,7 +13,7 @@ description: >-
 
 
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>lava-mainnet-1</td><td>v2.2.0</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>lava-mainnet-1</td><td>v3.1.0</td></tr></tbody></table>
 
 
 
