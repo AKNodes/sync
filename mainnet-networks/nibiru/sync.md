@@ -31,7 +31,7 @@ cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state
 nibid tendermint unsafe-reset-all --home $HOME/.nibid
 
 peers="ccdaa4db971cb4c428e33add35a4db58b96ebbad@167.235.14.83:61656"  
-SNAP_RPC="https://rpc.nibiru.aknodes.net:443"
+SNAP_RPC="https://rpc.nibiru-mainnet.aknodes.net:443"
 
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.nibid/config/config.toml 
 
