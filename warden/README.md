@@ -16,7 +16,7 @@ description: >-
 
 
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>buenavista-1</td><td>v0.3.0</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>chiado_10010-1</td><td>v0.5.2</td></tr></tbody></table>
 
 
 

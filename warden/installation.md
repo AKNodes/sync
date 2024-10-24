@@ -19,7 +19,7 @@ sudo apt-get install git curl build-essential make jq gcc snapd chrony lz4 tmux 
 rm -rf $HOME/go
 sudo rm -rf /usr/local/go
 cd $HOME
-curl https://dl.google.com/go/go1.20.5.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
+curl https://dl.google.com/go/go1.22.8.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
 cat <<'EOF' >>$HOME/.profile
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -34,18 +34,18 @@ go version
 
 ```
 cd $HOME
-rm -rf wardenprotocol
-git clone https://github.com/warden-protocol/wardenprotocol.git
-cd wardenprotocol
-git checkout v0.4.2
-make install-wardend
-sudo mv wardend $HOME/go/bin/
+rm -rf bin
+mkdir bin && cd bin
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.5.2/wardend_Linux_x86_64.zip
+unzip wardend_Linux_x86_64.zip
+chmod +x wardend
+mv $HOME/bin/wardend $HOME/go/bin
 ```
 
 ## **Initialize Node**
 
 ```
-wardend init MyNode --chain-id buenavista-1 
+wardend init MyNode --chain-id chiado_10010-1
 ```
 
 ### Download genesis and addrbook
