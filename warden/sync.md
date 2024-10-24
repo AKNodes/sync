@@ -30,7 +30,7 @@ sudo systemctl stop wardend
 cp $HOME/.warden/data/priv_validator_state.json $HOME/.warden/priv_validator_state.json.backup
 wardend tendermint unsafe-reset-all --home $HOME/.warden
 
-peers="166e5aa110c9c6cd86eb954182d51c0a850d2957@167.235.14.83:16256"  
+peers="e011e96c989104bc6f57fe18d8ff7a21b9b44b31@167.235.14.83:18656"  
 SNAP_RPC="https://rpc.warden.aknodes.net:443"
 
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.warden/config/config.toml 
