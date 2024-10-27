@@ -87,7 +87,7 @@ EOF
 
 ```
 prysmd tendermint unsafe-reset-all --home $HOME/.prysm --keep-addr-book 
-curl https://snapshots.aknodes.net/snapshots/symphony/snapshot-prysm.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.prysm
+curl https://snapshots.aknodes.net/snapshots/prysm/snapshot-prysm.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.prysm
 ```
 
 ### Start the node
