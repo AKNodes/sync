@@ -108,6 +108,11 @@
   * [Upgrade](symphony/upgrade.md)
   * [Sync](symphony/sync.md)
   * [Useful Commands](symphony/useful-commands.md)
+* [Prysm](prysm/README.md)
+  * [Installation](prysm/installation.md)
+  * [Upgrade](prysm/upgrade.md)
+  * [Sync](prysm/sync.md)
+  * [Useful Commands](prysm/useful-commands.md)
 
 ## 💻 MAINNET NETWORKS
 
