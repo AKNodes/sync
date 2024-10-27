@@ -1,12 +1,16 @@
 ---
 description: >-
-  Axone is an ever-expanding universe of applications powered by shared digital
-  resources.
+  Axone: The collaborative AI orchestration layer powering the decentralized AI
+  economy. Connect builders, data, and infrastructure seamlessly.
 ---
 
 # Axone
 
-<figure><img src="../.gitbook/assets/okp4-removebg-preview (1).png" alt="" width="200"><figcaption></figcaption></figure>
+## Explorer
+
+{% embed url="https://explorer.aknodes.com/AXONE-TESTNET" %}
+
+<figure><img src="../.gitbook/assets/EeZIYE7B_400x400-removebg-preview.png" alt="" width="200"><figcaption></figcaption></figure>
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>axone-dentrite-1</td><td>10.0.0</td></tr></tbody></table>
 
