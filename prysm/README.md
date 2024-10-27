@@ -34,6 +34,6 @@ https://api.prysm.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
-
+grpc.prysm.aknodes.net:64090
 {% endtab %}
 {% endtabs %}
