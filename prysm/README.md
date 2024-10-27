@@ -10,7 +10,7 @@ description: >-
 
 ## Explore
 
-
+{% embed url="https://explorer.aknodes.com/prysm" %}
 
 <figure><img src="../.gitbook/assets/tuxUJux0_400x400-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
 
