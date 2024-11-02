@@ -34,6 +34,6 @@ https://api.warden.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
-grpc.warden.aknodes.net:9490
+grpc.warden.aknodes.net:18090
 {% endtab %}
 {% endtabs %}
