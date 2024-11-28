@@ -7,7 +7,7 @@ cd $HOME
 rm -rf gitopia
 git clone https://github.com/gitopia/gitopia.git
 cd gitopia
-git checkout v4.0.0
+git checkout v5.0.1
 make build
 sudo systemctl restart gitopiad
 sudo journalctl -u gitopiad -f --no-hostname -o cat
@@ -19,7 +19,7 @@ sudo journalctl -u gitopiad -f --no-hostname -o cat
 
 ```
 cd $HOME && \
-wget -O gitopiad.tar.gz https://github.com/gitopia/gitopia/releases/download/v4.0.0/gitopiad_4.0.0_linux_amd64.tar.gz && \
+wget -O gitopiad.tar.gz https://github.com/gitopia/gitopia/releases/download/v5.0.1/gitopiad_5.0.1_linux_amd64.tar.gz && \
 tar -xzf gitopiad.tar.gz && \
 chmod +x $HOME/gitopiad && \
 old_bin_path=$(which gitopiad) && \
