@@ -164,6 +164,10 @@
 
 ## 💻 OTHER PROJETCS
 
+* [Avail mainnet](other-projetcs/avail-mainnet/README.md)
+  * [Installation](other-projetcs/avail-mainnet/installation.md)
+  * [Sync](other-projetcs/avail-mainnet/sync.md)
+  * [Upgrade](other-projetcs/avail-mainnet/upgrade.md)
 * [Massa Labs](other-projetcs/massa-labs/README.md)
   * [Installation](other-projetcs/massa-labs/installation.md)
 * [Avail](other-projetcs/avail/README.md)
