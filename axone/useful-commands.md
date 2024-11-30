@@ -1,277 +1,232 @@
 # Useful commands
 
-### <mark style="color:green;">Service Management</mark>⚙️ <a href="#service-management" id="service-management"></a>
+### 🔑 Key management <a href="#key-management" id="key-management"></a>
 
-**RELOAD SERVICE CONFIGURATION**
-
-```
-sudo systemctl daemon-reload
-```
-
-**ENABLE SERVICE**
+&#x20;**Add new key**
 
 ```
-sudo systemctl enable okp4.service
+axoned keys add wallet
 ```
 
-**DISABLE SERVICE**
+&#x20;**Recover existing key**
 
 ```
-sudo systemctl disable okp4.service
+axoned keys add wallet --recover
 ```
 
-**START SERVICE**
+&#x20;**List all keys**
 
 ```
-sudo systemctl start okp4.service
+axoned keys list
 ```
 
-**STOP SERVICE**
+&#x20;**Delete key**
 
 ```
-sudo systemctl stop okp4.service
+axoned keys delete wallet
 ```
 
-**RESTART SERVICE**
+&#x20;**Export key to a file**
 
 ```
-sudo systemctl restart okp4.service
+axoned keys export wallet
 ```
 
-**CHECK SERVICE STATUS**
+&#x20;**Import key from a file**
 
 ```
-sudo systemctl status okp4.service
+axoned keys import wallet wallet.backup
 ```
 
-**CHECK SERVICE LOGS**
+&#x20;**Query wallet balance**
 
 ```
-sudo journalctl -u okp4.service -f --no-hostname -o cat
+axoned q bank balances $(axoned keys show wallet -a)
 ```
 
-### Key management <a href="#key-management" id="key-management"></a>
+### &#x20;👷 Validator management <a href="#validator-management" id="validator-management"></a>
 
-**ADD NEW KEY**
-
-```
-okp4d keys add wallet
-```
-
-**RECOVER EXISTING KEY**
+&#x20;**Create new validator**
 
 ```
-okp4d keys add wallet --recover
-```
-
-**LIST ALL KEYS**
-
-```
-okp4d keys list
-```
-
-**DELETE KEY**
-
-```
-okp4d keys delete wallet
-```
-
-**EXPORT KEY TO A FILE**
-
-```
-okp4d keys export wallet
-```
-
-**IMPORT KEY FROM A FILE**
-
-```
-okp4d keys import wallet wallet.backup
-```
-
-**QUERY WALLET BALANCE**
-
-```
-okp4d q bank balances $(okp4d keys show wallet -a)
-```
-
-### &#x20;<mark style="color:yellow;">Validator management</mark> <a href="#validator-management" id="validator-management"></a>
-
-**CREATE NEW VALIDATOR**
-
-```
-okp4d tx staking create-validator \
---amount 1000000uknow \
---pubkey $(okp4d tendermint show-validator) \
---moniker "YOUR_MONIKER_NAME" \
---identity "YOUR_KEYBASE_ID" \
---details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id okp4-nemeton-1 \
---commission-rate 0.05 \
---commission-max-rate 0.20 \
---commission-max-change-rate 0.01 \
---min-self-delegation 1 \
+axoned tx staking create-validator <(cat <<EOF
+{
+  "pubkey": $(axoned comet show-validator),
+  "amount": "1000000uaxone",
+  "moniker": "YOUR_MONIKER_NAME",
+  "identity": "YOUR_KEYBASE_ID",
+  "website": "YOUR_WEBSITE_URL",
+  "security": "YOUR_SECURITY_EMAIL",
+  "details": "YOUR_DETAILS",
+  "commission-rate": "0.05",
+  "commission-max-rate": "0.20",
+  "commission-max-change-rate": "0.05",
+  "min-self-delegation": "1"
+}
+EOF
+) \
+--chain-id axone-dentrite-1 \
 --from wallet \
 --gas-adjustment 1.4 \
 --gas auto \
---gas-prices 0uknow \
+--gas-prices 0uaxone \
 -y
 ```
 
-**EDIT EXISTING VALIDATOR**
+&#x20;**Edit existing validator**
 
 ```
-okp4d tx staking edit-validator \
+axoned tx staking edit-validator \
 --new-moniker "YOUR_MONIKER_NAME" \
 --identity "YOUR_KEYBASE_ID" \
 --details "YOUR_DETAILS" \
 --website "YOUR_WEBSITE_URL" \
---chain-id okp4-nemeton-1 \
+--chain-id axone-dentrite-1 \
 --commission-rate 0.05 \
 --from wallet \
 --gas-adjustment 1.4 \
 --gas auto \
---gas-prices 0uknow \
+--gas-prices 0uaxone \
 -y
 ```
 
-**UNJAIL VALIDATOR**
+&#x20;**Unjail validator**
 
 ```
-okp4d tx slashing unjail --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx slashing unjail --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-**JAIL REASON**
+&#x20;**Jail reason**
 
 ```
-okp4d query slashing signing-info $(okp4d tendermint show-validator)
+axoned query slashing signing-info $(axoned comet show-validator)
 ```
 
-**LIST ALL ACTIVE VALIDATORS**
+&#x20;**List all active validators**
 
 ```
-okp4d q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+axoned q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
-**LIST ALL INACTIVE VALIDATORS**
+&#x20;**List all inactive validators**
 
 ```
-okp4d q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+axoned q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
-**VIEW VALIDATOR DETAILS**
+&#x20;**View validator details**
 
 ```
-okp4d q staking validator $(okp4d keys show wallet --bech val -a)
+axoned q staking validator $(axoned keys show wallet --bech val -a)
 ```
 
-### &#x20;<mark style="color:red;">Token management</mark> <a href="#token-management" id="token-management"></a>
+### &#x20;💲 Token management <a href="#token-management" id="token-management"></a>
 
-**WITHDRAW REWARDS FROM ALL VALIDATORS**
-
-```
-okp4d tx distribution withdraw-all-rewards --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
-```
-
-**WITHDRAW COMMISSION AND REWARDS FROM YOUR VALIDATOR**
+&#x20;**Withdraw rewards from all validators**
 
 ```
-okp4d tx distribution withdraw-rewards $(okp4d keys show wallet --bech val -a) --commission --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx distribution withdraw-all-rewards --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-**DELEGATE TOKENS TO YOURSELF**
+&#x20;**Withdraw commission and rewards from your validator**
 
 ```
-okp4d tx staking delegate $(okp4d keys show wallet --bech val -a) 1000000uknow --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx distribution withdraw-rewards $(axoned keys show wallet --bech val -a) --commission --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-**DELEGATE TOKENS TO VALIDATOR**
+&#x20;**Delegate tokens to yourself**
 
 ```
-okp4d tx staking delegate <TO_VALOPER_ADDRESS> 1000000uknow --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx staking delegate $(axoned keys show wallet --bech val -a) 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-**REDELEGATE TOKENS TO ANOTHER VALIDATOR**
+&#x20;**Delegate tokens to validator**
 
 ```
-okp4d tx staking redelegate $(okp4d keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uknow --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx staking delegate <TO_VALOPER_ADDRESS> 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-**UNBOND TOKENS FROM YOUR VALIDATOR**
+&#x20;**Redelegate tokens to another validator**
 
 ```
-okp4d tx staking unbond $(okp4d keys show wallet --bech val -a) 1000000uknow --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx staking redelegate $(axoned keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-**SEND TOKENS TO THE WALLET**
+&#x20;**Unbond tokens from your validator**
 
 ```
-okp4d tx bank send wallet <TO_WALLET_ADDRESS> 1000000uknow --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx staking unbond $(axoned keys show wallet --bech val -a) 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-### &#x20;<mark style="color:orange;">Governance</mark> <a href="#governance" id="governance"></a>
-
-**LIST ALL PROPOSALS**
+&#x20;**Send tokens to the wallet**
 
 ```
-okp4d query gov proposals
+axoned tx bank send wallet <TO_WALLET_ADDRESS> 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-**VIEW PROPOSAL BY ID**
+### &#x20;🗳 Governance <a href="#governance" id="governance"></a>
+
+&#x20;**List all proposals**
 
 ```
-okp4d query gov proposal 1
+axoned query gov proposals
 ```
 
-**VOTE ‘YES’**
+&#x20;**View proposal by id**
 
 ```
-okp4d tx gov vote 1 yes --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned query gov proposal 1
 ```
 
-**VOTE ‘NO’**
+&#x20;**Vote ‘Yes’**
 
 ```
-okp4d tx gov vote 1 no --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx gov vote 1 yes --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-**VOTE ‘ABSTAIN’**
+&#x20;**Vote ‘No’**
 
 ```
-okp4d tx gov vote 1 abstain --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx gov vote 1 no --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-**VOTE ‘NOWITHVETO’**
+&#x20;**Vote ‘Abstain’**
 
 ```
-okp4d tx gov vote 1 NoWithVeto --from wallet --chain-id okp4-nemeton-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uknow -y
+axoned tx gov vote 1 abstain --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
-### &#x20;<mark style="color:purple;">Utility</mark> <a href="#utility" id="utility"></a>
+&#x20;**Vote ‘NoWithVeto’**
 
-**UPDATE PORTS**
+```
+axoned tx gov vote 1 NoWithVeto --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+```
+
+### &#x20;⚡️ Utility <a href="#utility" id="utility"></a>
+
+&#x20;**Update ports**
 
 ```
 CUSTOM_PORT=110
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}66\"%" $HOME/.okp4d/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}17\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}80\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}91\"%" $HOME/.okp4d/config/app.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}66\"%" $HOME/.axoned/config/config.toml
+sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}17\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}80\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}91\"%" $HOME/.axoned/config/app.toml
 ```
 
-**UPDATE INDEXER**
+&#x20;**Update Indexer**
 
 **Disable indexer**
 
 ```
-sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.okp4d/config/config.toml
+sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.axoned/config/config.toml
 ```
 
 **Enable indexer**
 
 ```
-sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.okp4d/config/config.toml
+sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.axoned/config/config.toml
 ```
 
-**UPDATE PRUNING**
+&#x20;**Update pruning**
 
 ```
 sed -i \
@@ -279,68 +234,118 @@ sed -i \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.okp4d/config/app.toml
+  $HOME/.axoned/config/app.toml
 ```
 
-### &#x20;<mark style="color:blue;">Maintenance</mark> <a href="#maintenance" id="maintenance"></a>
+### &#x20;🚨 Maintenance <a href="#maintenance" id="maintenance"></a>
 
-**GET VALIDATOR INFO**
-
-```
-okp4d status 2>&1 | jq .ValidatorInfo
-```
-
-**GET SYNC INFO**
+&#x20;**Get validator info**
 
 ```
-okp4d status 2>&1 | jq .SyncInfo
+axoned status 2>&1 | jq .ValidatorInfo
 ```
 
-**GET NODE PEER**
+&#x20;**Get sync info**
 
 ```
-echo $(okp4d tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.okp4d/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+axoned status 2>&1 | jq .SyncInfo
 ```
 
-**CHECK IF VALIDATOR KEY IS CORRECT**
+&#x20;**Get node peer**
 
 ```
-[[ $(okp4d q staking validator $(okp4d keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(okp4d status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
+echo $(axoned comet show-node-id)'@'$(curl -4s ifconfig.me)':'$(cat $HOME/.axoned/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
-**GET LIVE PEERS**
+&#x20;**Check if validator key is correct**
+
+```
+[[ $(axoned q staking validator $(axoned keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(axoned status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
+```
+
+&#x20;**Get live peers**
 
 ```
 curl -sS http://localhost:13657/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
 
-**SET MINIMUM GAS PRICE**
+&#x20;**Set minimum gas price**
 
 ```
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uknow\"/" $HOME/.okp4d/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uaxone\"/" $HOME/.axoned/config/app.toml
 ```
 
-**ENABLE PROMETHEUS**
+&#x20;**Enable prometheus**
 
 ```
-sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.okp4d/config/config.toml
+sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.axoned/config/config.toml
 ```
 
-**RESET CHAIN DATA**
+&#x20;**Reset chain data**
 
 ```
-okp4d tendermint unsafe-reset-all --keep-addr-book --home $HOME/.okp4d --keep-addr-book
+axoned comet unsafe-reset-all --keep-addr-book --home $HOME/.axoned --keep-addr-book
 ```
 
-**REMOVE NODE**
+&#x20;**Remove node**
 
 ```
 cd $HOME
-sudo systemctl stop okp4.service
-sudo systemctl disable okp4.service
-sudo rm /etc/systemd/system/okp4.service
+sudo systemctl stop axone-testnet.service
+sudo systemctl disable axone-testnet.service
+sudo rm /etc/systemd/system/axone-testnet.service
 sudo systemctl daemon-reload
-rm -f $(which okp4d)
-rm -rf $HOME/.okp4d
-rm -rf $HOME/okp4d
+rm -f $(which axoned)
+rm -rf $HOME/.axoned
+rm -rf $HOME/axoned
+```
+
+### &#x20;⚙️ Service Management <a href="#service-management" id="service-management"></a>
+
+&#x20;**Reload service configuration**
+
+```
+sudo systemctl daemon-reload
+```
+
+&#x20;**Enable service**
+
+```
+sudo systemctl enable axone-testnet.service
+```
+
+&#x20;**Disable service**
+
+```
+sudo systemctl disable axone-testnet.service
+```
+
+&#x20;**Start service**
+
+```
+sudo systemctl start axone-testnet.service
+```
+
+&#x20;**Stop service**
+
+```
+sudo systemctl stop axone-testnet.service
+```
+
+&#x20;**Restart service**
+
+```
+sudo systemctl restart axone-testnet.service
+```
+
+&#x20;**Check service status**
+
+```
+sudo systemctl status axone-testnet.service
+```
+
+&#x20;**Check service logs**
+
+```
+sudo journalctl -u axone-testnet.service -f --no-hostname -o cat
 ```
