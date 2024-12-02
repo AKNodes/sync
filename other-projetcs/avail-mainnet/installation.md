@@ -48,7 +48,7 @@ tar -xf x86_64-ubuntu-2204-avail-node.tar.gz
 Replace YOURVALIDATORNAME with your moniker
 
 ```
-sudo tee /etc/systemd/system/availd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/availd-mainnet.service > /dev/null <<EOF
 [Unit]
 Description=Avail Validator
 After=network.target
@@ -67,6 +67,6 @@ EOF
 
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable availd.service
-sudo systemctl restart availd && sudo journalctl -u availd -f
+sudo systemctl enable availd-mainnet.service
+sudo systemctl restart availd-mainnet && sudo journalctl -u availd-mainnet -f
 ```
