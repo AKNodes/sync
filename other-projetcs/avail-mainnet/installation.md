@@ -55,7 +55,7 @@ After=network.target
 StartLimitIntervalSec=0
 [Service]
 User=root
-ExecStart= /root/avail/avail-node -d /root/avail/node-data --chain mainnet --validator --name "YOURVALIDATORNAME"
+ExecStart= /root/avail/avail-node -d /root/avail/node-data --chain mainnet --validator --name "AKNodes" --port 30334 --rpc-port 9945
 Restart=always
 RestartSec=120
 [Install]
