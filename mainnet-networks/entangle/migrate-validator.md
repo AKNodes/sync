@@ -65,7 +65,7 @@ sudo systemctl stop entangled
 
 #### 7. Move the validator's private key from the old machine to the new machine
 
-**Private key is located in: `~/.``entangled/config/priv_validator_key.json`**
+**Private key is located in: `~/.entangled/config/priv_validator_key.json`**
 
 > _After being copied, the key `priv_validator_key.json` should then be removed from the old node's config directory to prevent double-signing if the node were to start back up_
 
@@ -86,5 +86,5 @@ sudo systemctl start entangled
 **To unjail your validator**
 
 ```
-entangled tx slashing unjail --chain-id $LAVA_CHAIN_ID --from mykey --gas=auto -y
+entangled tx slashing unjail --from $WALLET --chain-id entangle_33033-1 --gas=700000 --gas-prices="20aNGL" -y
 ```
