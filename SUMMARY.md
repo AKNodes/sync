@@ -126,6 +126,7 @@
   * [Upgrade](mainnet-networks/entangle/upgrade.md)
   * [Sync](mainnet-networks/entangle/sync.md)
   * [Useful commands](mainnet-networks/entangle/useful-commands.md)
+  * [Migrate Validator](mainnet-networks/entangle/migrate-validator.md)
 * [Axelar](mainnet-networks/axelar/README.md)
   * [Installation (PebbleDB)](mainnet-networks/axelar/installation-pebbledb.md)
   * [Upgrade](mainnet-networks/axelar/upgrade.md)
