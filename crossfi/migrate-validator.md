@@ -65,7 +65,7 @@ sudo systemctl stop crossfid
 
 #### 7. Move the validator's private key from the old machine to the new machine
 
-**Private key is located in: `~/.`**mineplex-chain/**`config/priv_validator_key.json`**
+**Private key is located in: `~/.`**&#x6D;ineplex-chain/**`config/priv_validator_key.json`**
 
 > _After being copied, the key `priv_validator_key.json` should then be removed from the old node's config directory to prevent double-signing if the node were to start back up_
 

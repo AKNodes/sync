@@ -21,9 +21,7 @@ description: >-
 
 
 
-| Binary Name | Wasm     | SDK version |
-| ----------- | -------- | ----------- |
-| arkeod      | Disabled | v0.46.13    |
+<table><thead><tr><th width="71.33333333333331">Binary Name</th><th>Wasm</th><th>SDK version</th></tr></thead><tbody><tr><td>arkeod</td><td>Disabled</td><td>v0.46.13</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="RPC" %}
@@ -38,3 +36,4 @@ https://rpc.arkeo.aknodes.net
 grpc.arkro.aknodes.net:9390
 {% endtab %}
 {% endtabs %}
+
