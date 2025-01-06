@@ -4,6 +4,10 @@ Pell is the first and omnichain BTC Restaking Network. By building an Omnichain 
 
 
 
+
+
+{% embed url="https://explorer.aknodes.com/pell" %}
+
 <figure><img src="../.gitbook/assets/_jr_bub2_400x400.png" alt="" width="100"><figcaption></figcaption></figure>
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>ignite_186-1</td><td>1.1.1-ignite</td></tr></tbody></table>
