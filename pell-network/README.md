@@ -14,15 +14,15 @@ Pell is the first and omnichain BTC Restaking Network. By building an Omnichain 
 
 {% tabs %}
 {% tab title="RPC" %}
-https://rpc.pellcored.aknodes.net
+https://rpc.pell.aknodes.net
 {% endtab %}
 
 {% tab title="API" %}
-[https://api.pellcored.aknodes.net/](https://api.arkeo.aknodes.net/)
+[https://api.pell.aknodes.net/](https://api.arkeo.aknodes.net/)
 {% endtab %}
 
 {% tab title="gRPC" %}
-grpc.pellcored.aknodes.net:9390
+grpc.pell.aknodes.net:58090
 {% endtab %}
 {% endtabs %}
 
