@@ -39,16 +39,17 @@ go version
 ### Install Node
 
 ```
-cd $HOME
-wget -O pellcored https://github.com/0xPellNetwork/network-config/releases/download/v1.1.1-ignite/pellcored-v1.1.1-linux-amd64
-chmod +x pellcored
-mv pellcored ~/go/bin/
-WASMVM_VERSION=v2.1.2
-export LD_LIBRARY_PATH=~/.pellcored/lib
-mkdir -p $LD_LIBRARY_PATH
-wget "https://github.com/CosmWasm/wasmvm/releases/download/$WASMVM_VERSION/libwasmvm.$(uname -m).so" -O "$LD_LIBRARY_PATH/libwasmvm.$(uname -m).so"
-echo "export LD_LIBRARY_PATH=$HOME/.pellcored/lib:$LD_LIBRARY_PATH" >> $HOME/.bash_profile
+cd $HOME && \
+wget -O pellcored https://github.com/0xPellNetwork/network-config/releases/download/v1.2.1/pellcored-v1.2.1-linux-amd64 && \
+chmod +x pellcored && \
+mv pellcored ~/go/bin/ && \
+WASMVM_VERSION=v2.1.2 && \
+export LD_LIBRARY_PATH=~/.pellcored/lib && \
+mkdir -p $LD_LIBRARY_PATH && \
+wget "https://github.com/CosmWasm/wasmvm/releases/download/$WASMVM_VERSION/libwasmvm.$(uname -m).so" -O "$LD_LIBRARY_PATH/libwasmvm.$(uname -m).so" && \
+echo "export LD_LIBRARY_PATH=$HOME/.pellcored/lib:$LD_LIBRARY_PATH" >> $HOME/.bash_profile && \
 source ~/.bash_profile
+
 ```
 
 ## **Initialize Node**
