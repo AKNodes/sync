@@ -47,7 +47,7 @@ git clone https://github.com/NibiruChain/nibiru.git
 
 cd nibiru
 
-git checkout v1.5.0
+git checkout v2.0.0-p1
 
 make install
 ```
@@ -101,4 +101,4 @@ sudo systemctl restart nibid
 journalctl -u nibid -f
 ```
 
-[buy me a cup of coffe](https://www.paypal.com/paypalme/AbdelAkridi?country.x=NL\&locale.x=en\_US)
+[buy me a cup of coffe](https://www.paypal.com/paypalme/AbdelAkridi?country.x=NL\&locale.x=en_US)
