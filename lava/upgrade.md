@@ -6,7 +6,7 @@
 
 ```bash
 cd $HOME
-wget -O lavad https://github.com/lavanet/lava/releases/download/v4.2.0/lavad-v4.2.0-linux-amd64
+wget -O lavad https://github.com/lavanet/lava/releases/download/v5.2.0/lavad-v5.2.0-linux-amd64
 chmod +x $HOME/lavad
 sudo mv $HOME/lavad $(which lavad)
 sudo systemctl restart lavad && sudo journalctl -u lavad -f
@@ -18,7 +18,7 @@ sudo systemctl restart lavad && sudo journalctl -u lavad -f
 
 ```bash
 cd $HOME && \
-wget -O lavad https://github.com/lavanet/lava/releases/download/v4.2.0/lavad-v4.2.0-linux-amd64 && \
+wget -O lavad https://github.com/lavanet/lava/releases/download/v5.2.0/lavad-v5.2.0-linux-amd64 && \
 chmod +x $HOME/lavad && \
 old_bin_path=$(which lavad) && \
 home_path=$HOME && \
