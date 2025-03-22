@@ -16,7 +16,7 @@ description: >-
 
 
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>junction</td><td>v0.1.0</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>varanasi-1</td><td>0.3.1</td></tr></tbody></table>
 
 
 
@@ -26,11 +26,11 @@ description: >-
 
 {% tabs %}
 {% tab title="RPC" %}
-https://rpc.airchains.aknodes.net
+https://rpc.airchains-v.aknodes.net
 {% endtab %}
 
 {% tab title="API" %}
-https://api.airchains.aknodes.net
+https://api.airchains-v.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}

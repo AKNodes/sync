@@ -28,8 +28,8 @@ sudo systemctl stop junctiond
 cp $HOME/.junction/data/priv_validator_state.json $HOME/.junction/priv_validator_state.json.backup
 junctiond tendermint unsafe-reset-all --home $HOME/.junction
 
-peers="9f785525827dc317d16a66605195cf5dfbe7276d@167.235.14.83:34656"  
-SNAP_RPC="https://rpc.junction.aknodes.net:443"
+peers="97027438ed3960132e22d39f343c2158ae7d749d@167.235.14.83:11956"  
+SNAP_RPC="https://rpc.airchains-v.aknodes.net:443"
 
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.junction/config/config.toml 
 

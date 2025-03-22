@@ -40,7 +40,7 @@ go version
 
 ```
 cd $HOME
-wget -O junctiond https://github.com/airchains-network/junction/releases/download/v0.1.0/junctiond
+wget -O junctiond https://github.com/airchains-network/junction/releases/download/v0.3.1/junctiond-linux-amd64
 chmod +x junctiond
 mv junctiond $HOME/go/bin/
 ```

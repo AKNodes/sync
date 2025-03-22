@@ -5,7 +5,7 @@
 Check logs
 
 ```bash
-sudo journalctl -u junctiond -f
+sudo journalctl -u junctiond -fo cat
 ```
 
 Start service
@@ -59,7 +59,7 @@ junctiond status 2>&1 | jq
 Your node peer
 
 ```bash
-echo $(junctiond tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.junction/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(junctiond tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.junctiond/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 ### Key management <a href="#key-management" id="key-management"></a>
@@ -114,16 +114,18 @@ junctiond keys import $WALLET wallet.backup
 
 ### Tokens <a href="#tokens" id="tokens"></a>
 
+
+
 Withdraw all rewards
 
 ```bash
-junctiond tx distribution withdraw-all-rewards --from $WALLET --chain-id junction --fees 200amf 
+junctiond tx distribution withdraw-all-rewards --from $WALLET --chain-id varanasi-1 --fees 200amf 
 ```
 
 Withdraw rewards and commission from your validator
 
 ```bash
-junctiond tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id junction --fees 200amf -y 
+junctiond tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id varanasi-1 --fees 200amf -y 
 ```
 
 Check your balance
@@ -135,25 +137,25 @@ junctiond query bank balances $WALLET_ADDRESS
 Delegate to Yourself
 
 ```bash
-junctiond tx staking delegate $(junctiond keys show $WALLET --bech val -a) 1000000amf --from $WALLET --chain-id junction --fees 200amf -y 
+junctiond tx staking delegate $(junctiond keys show $WALLET --bech val -a) 1000000amf --from $WALLET --chain-id varanasi-1 --fees 200amf -y 
 ```
 
 Delegate
 
 ```bash
-junctiond tx staking delegate <TO_VALOPER_ADDRESS> 1000000amf --from $WALLET --chain-id junction --fees 200amf -y 	
+junctiond tx staking delegate <TO_VALOPER_ADDRESS> 1000000amf --from $WALLET --chain-id varanasi-1 --fees 200amf -y 	
 ```
 
 Redelegate Stake to Another Validator
 
 ```bash
-junctiond tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000amf --from $WALLET --chain-id junction --fees 200amf -y 
+junctiond tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000amf --from $WALLET --chain-id varanasi-1 --fees 200amf -y 
 ```
 
 Unbond
 
 ```bash
-junctiond tx staking unbond $(junctiond keys show $WALLET --bech val -a) 1000000amf --from $WALLET --chain-id junction --fees 200amf -y 
+junctiond tx staking unbond $(junctiond keys show $WALLET --bech val -a) 1000000amf --from $WALLET --chain-id varanasi-1 --fees 200amf -y 
 ```
 
 Transfer Funds
@@ -163,6 +165,8 @@ junctiond tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000amf --fees 200
 ```
 
 ### Validator operations <a href="#validator-operations" id="validator-operations"></a>
+
+
 
 Create New Validator
 
@@ -177,9 +181,9 @@ junctiond tx staking create-validator \
 --pubkey $(junctiond tendermint show-validator) \
 --moniker "$MONIKER" \
 --identity "" \
---details "I love blockchain ❤️" \
---chain-id junction \
---fees 200amf \
+--details "xxxxxxxxx" \
+--chain-id varanasi-1 \
+--fees 500amf \
 -y 
 ```
 
@@ -190,10 +194,10 @@ junctiond tx staking edit-validator \
 --commission-rate 0.1 \
 --new-moniker "$MONIKER" \
 --identity "" \
---details "I love blockchain ❤️" \
+--details "xxxxxxxxx" \
 --from $WALLET \
---chain-id junction \
---fees 200amf \
+--chain-id varanasi-1 \
+--fees 500amf \
 -y 
 ```
 
@@ -224,7 +228,7 @@ junctiond q slashing params
 Unjail validator
 
 ```bash
-junctiond tx slashing unjail --from $WALLET --chain-id junction --fees 200amf -y 
+junctiond tx slashing unjail --from $WALLET --chain-id varanasi-1 --fees 500amf -y 
 ```
 
 Active Validators List
@@ -256,7 +260,7 @@ junctiond  tx gov submit-proposal \
 --deposit 1000000amf \
 --type Text \
 --from $WALLET \
---fees 200amf \
+--fees 500amf \
 -y 
 ```
 
@@ -265,6 +269,8 @@ Proposals List
 ```bash
 junctiond query gov proposals 
 ```
+
+
 
 View proposal
 
@@ -275,5 +281,5 @@ junctiond query gov proposal 1
 Vote
 
 ```bash
-junctiond tx gov vote 1 yes --from $WALLET --chain-id junction  --fees 200amf -y 
+junctiond tx gov vote 1 yes --from $WALLET --chain-id varanasi-1  --fees 500amf -y 
 ```
