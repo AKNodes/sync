@@ -26,14 +26,14 @@ description: >-
 
 {% tabs %}
 {% tab title="RPC" %}
-https://rpc.airchains.aknodes.net
+https://rpc.airchains-v.aknodes.net
 {% endtab %}
 
 {% tab title="API" %}
-https://api.airchains.aknodes.net
+https://api.airchains-v.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
-grpc.airchains.aknodes.net:9890
+grpc.airchains-v.aknodes.net:9090
 {% endtab %}
 {% endtabs %}
