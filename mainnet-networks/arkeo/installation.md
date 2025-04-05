@@ -25,7 +25,7 @@ sudo apt-get install git curl build-essential make jq gcc snapd chrony lz4 tmux 
 rm -rf $HOME/go
 sudo rm -rf /usr/local/go
 cd $HOME
-curl https://dl.google.com/go/go1.20.5.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
+curl https://dl.google.com/go/go1.23.1.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
 cat <<'EOF' >>$HOME/.profile
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -40,31 +40,24 @@ go version
 
 ```
 cd $HOME
-
-mkdir -p /root/go/bin/
-
-wget https://snapshots.aknodes.net/snapshots/arkeo/arkeod
-
-chmod +x arkeod
-
-mv arkeod /root/go/bin/
-
-arkeod version
+rm -rf arkeo
+git clone https://github.com/arkeonetwork/arkeo.git
+cd arkeo
+git checkout v1.0.9
+make install
 ```
 
-## **Initialize Node**
-
 ```
-arkeod init "$MONIKER" --chain-id=arkeo
+arkeod init "$MONIKER" --chain-id=arkeo-main-v1
 ```
 
 ### Download genesis and addrbook
 
-<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/arkeo/genesis.json > $HOME/.arkeo/config/genesis.json
+<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/arkeo-mainnet/genesis.json > $HOME/.arkeo/config/genesis.json
 </strong></code></pre>
 
 ```
-curl -Ls https://snapshots.aknodes.net/snapshots/arkeo/addrbook.json > $HOME/.arkeo/config/addrbook.json
+curl -Ls https://snapshots.aknodes.net/snapshots/arkeo-mainnet/addrbook.json > $HOME/.arkeo/config/addrbook.json
 ```
 
 ### **Create Service**
@@ -90,7 +83,7 @@ sudo systemctl enable arkeod
 
 ```
 arkeod tendermint unsafe-reset-all --home $HOME/.arkeo --keep-addr-book 
-curl https://snapshots.aknodes.net/snapshots/arkeo/snapshot-arkeo.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.arkeo
+curl https://snapshots.aknodes.net/snapshots/arkeo-mainnet/snapshot-arkeo-mainnet.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.arkeo
 ```
 
 ### Start the node

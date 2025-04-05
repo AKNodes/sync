@@ -167,6 +167,11 @@
   * [Upgrade](mainnet-networks/lava/upgrade.md)
   * [Sync](mainnet-networks/lava/sync.md)
   * [Useful commands](mainnet-networks/lava/useful-commands.md)
+* [Arkeo](mainnet-networks/arkeo/README.md)
+  * [Installation](mainnet-networks/arkeo/installation.md)
+  * [Upgrade](mainnet-networks/arkeo/upgrade.md)
+  * [Sync](mainnet-networks/arkeo/sync.md)
+  * [Useful commands](mainnet-networks/arkeo/useful-commands.md)
 
 ## 💻 OTHER PROJETCS
 
