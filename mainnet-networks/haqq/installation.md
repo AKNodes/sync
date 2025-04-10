@@ -25,7 +25,7 @@ sudo apt-get install git curl build-essential make jq gcc snapd chrony lz4 tmux 
 rm -rf $HOME/go
 sudo rm -rf /usr/local/go
 cd $HOME
-curl https://dl.google.com/go/go1.20.5.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
+curl https://dl.google.com/go/go1.23.5.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
 cat <<'EOF' >>$HOME/.profile
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -100,4 +100,4 @@ curl https://snapshots.aknodes.net/snapshots/haqq/snapshot-haqq.AKNodes.lz4 | lz
 sudo systemctl restart haqqd
 ```
 
-[buy me a cup of coffe](https://www.paypal.com/paypalme/AbdelAkridi?country.x=NL\&locale.x=en\_US)
+[buy me a cup of coffe](https://www.paypal.com/paypalme/AbdelAkridi?country.x=NL\&locale.x=en_US)
