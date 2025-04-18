@@ -2,11 +2,11 @@
 
 ```
 cd $HOME
-rm -rf arkeo
-git clone https://github.com/arkeonetwork/arkeo.git
-cd arkeo
-git checkout v1.0.9
-make install
+wget -O arkeod.zip https://github.com/arkeonetwork/arkeo/releases/download/v1.0.11/arkeod_1.0.11_linux_amd64.zip
+unzip -o arkeod.zip
+chmod +x $HOME/arkeod
+sudo mv $HOME/arkeod $(which arkeod)
+sudo systemctl restart arkeod && sudo journalctl -u arkeod -f
 ```
 
 
