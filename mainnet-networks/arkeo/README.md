@@ -21,7 +21,7 @@ description: >-
 
 
 
-<table><thead><tr><th width="71.33333333333331">Binary Name</th><th>Wasm</th><th>SDK version</th></tr></thead><tbody><tr><td>arkeod</td><td>Disabled</td><td>v0.46.13</td></tr></tbody></table>
+<table><thead><tr><th width="71.33333333333331">Binary Name</th><th>Wasm</th><th>SDK version</th></tr></thead><tbody><tr><td>arkeod</td><td>Disabled</td><td>v0.50.11</td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="RPC" %}
