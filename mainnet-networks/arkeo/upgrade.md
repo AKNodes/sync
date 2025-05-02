@@ -19,7 +19,7 @@ sudo systemctl restart arkeod && sudo journalctl -u arkeod -f
 
 ```
 cd $HOME && \
-wget -O arkeod.zip https://github.com/arkeonetwork/arkeo/releases/download/v1.0.12/arkeod_1.0.11_linux_amd64.zip && \
+wget -O arkeod.zip https://github.com/arkeonetwork/arkeo/releases/download/v1.0.12/arkeod_1.0.12_linux_amd64.zip && \
 unzip -o arkeod.zip && \
 chmod +x arkeod && \
 old_bin_path=$(which arkeod) && \
