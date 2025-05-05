@@ -6,7 +6,7 @@ description: Height 483000
 
 ```
 cd $HOME
-wget -O arkeod.zip https://github.com/arkeonetwork/arkeo/releases/download/v1.0.12/arkeod_1.0.12_linux_amd64.zip
+wget -O arkeod.zip https://github.com/arkeonetwork/arkeo/releases/download/v1.0.13/arkeod_1.0.13_linux_amd64.zip
 unzip -o arkeod.zip
 chmod +x $HOME/arkeod
 sudo mv $HOME/arkeod $(which arkeod)
@@ -19,7 +19,7 @@ sudo systemctl restart arkeod && sudo journalctl -u arkeod -f
 
 ```
 cd $HOME && \
-wget -O arkeod.zip https://github.com/arkeonetwork/arkeo/releases/download/v1.0.12/arkeod_1.0.12_linux_amd64.zip && \
+wget -O arkeod.zip https://github.com/arkeonetwork/arkeo/releases/download/v1.0.13/arkeod_1.0.13_linux_amd64.zip && \
 unzip -o arkeod.zip && \
 chmod +x arkeod && \
 old_bin_path=$(which arkeod) && \

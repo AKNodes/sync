@@ -17,7 +17,7 @@ description: >-
 
 <figure><img src="../../.gitbook/assets/arkeo.png" alt="" width="100"><figcaption></figcaption></figure>
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>arkeo-main-v1</td><td>1.0.9</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>arkeo-main-v1</td><td>1.0.13</td></tr></tbody></table>
 
 
 
