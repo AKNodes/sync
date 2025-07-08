@@ -172,6 +172,11 @@
   * [Upgrade](mainnet-networks/arkeo/upgrade.md)
   * [Sync](mainnet-networks/arkeo/sync.md)
   * [Useful commands](mainnet-networks/arkeo/useful-commands.md)
+* [Axone](mainnet-networks/axone/README.md)
+  * [Installation](mainnet-networks/axone/installation.md)
+  * [Upgrade](mainnet-networks/axone/upgrade.md)
+  * [Sync](mainnet-networks/axone/sync.md)
+  * [Useful Commands](mainnet-networks/axone/useful-commands.md)
 
 ## 💻 OTHER PROJETCS
 

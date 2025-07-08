@@ -1,9 +1,3 @@
----
-description: >-
-  Minimum Hardware Requirements 4x CPUs; the faster clock speed the better  8GB
-  RAM  100GB of storage (SSD or NVME)
----
-
 # Installation
 
 ## <mark style="color:blue;">Setup validator name</mark> <a href="#setup-validator-name" id="setup-validator-name"></a>
@@ -47,7 +41,7 @@ git clone https://github.com/axone-protocol/axoned
 
 cd axoned || return
 
-git checkout v10.0.0
+git checkout v12.0.0
 
 make install
 
@@ -56,16 +50,16 @@ make install
 ## **Initialize Node**
 
 ```
-axoned init "$MONIKER" --chain-id=axone-dentrite-1
+axoned init "$MONIKER" --chain-id=axone-1
 ```
 
 ### Download genesis and addrbook
 
-<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/axone/genesis.json > $HOME/.axoned/config/genesis.json
+<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/axone-mainnet/genesis.json > $HOME/.axoned/config/genesis.json
 </strong></code></pre>
 
 ```
-curl -Ls https://snapshots.aknodes.net/snapshots/axone/addrbook.json > $HOME/.axoned/config/addrbook.json
+curl -Ls https://snapshots.aknodes.net/snapshots/axone-mainnet/addrbook.json > $HOME/.axoned/config/addrbook.json
 ```
 
 ### **Create Service**
@@ -92,7 +86,7 @@ sudo systemctl enable axoned
 
 ```
 axoned tendermint unsafe-reset-all --home $HOME/.axoned --keep-addr-book 
-curl https://snapshots.aknodes.net/snapshots/axone/snapshot-axone.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.axoned
+curl https://snapshots.aknodes.net/snapshots/axone-mainnet/snapshot-axone-mainnet.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.axoned
 ```
 
 ### Start the node

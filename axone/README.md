@@ -26,10 +26,10 @@ https://rpc.axone.aknodes.net
 {% endtab %}
 
 {% tab title="API" %}
-https://api.api.aknodes.net
+https://api.axone.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
-grpc.okp4.aknodes.net:9290
+grpc.axone.aknodes.net:9290
 {% endtab %}
 {% endtabs %}
