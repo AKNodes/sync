@@ -1,6 +1,6 @@
 # Upgrade
 
-version 2.2.0-fe7e86296d8
+version **v2.3.1.0-rc1**
 
 ### Stop your node
 
@@ -23,7 +23,7 @@ rm -rf avail-node
 ```
 
 ```
-wget https://github.com/availproject/avail/releases/download/v2.2.5.0-rc1/x86_64-ubuntu-2404-avail-node.tar.gz
+wget https://github.com/availproject/avail/releases/download/v2.3.1.0-rc1/x86_64-ubuntu-2404-avail-node.tar.gz
 ```
 
 ### Extract the file
