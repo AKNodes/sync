@@ -32,6 +32,6 @@ https://api.axone-mainnet.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
-grpc.axone-mainnet.aknodes.net:9290
+grpc.axone-mainnet.aknodes.net:14290
 {% endtab %}
 {% endtabs %}
