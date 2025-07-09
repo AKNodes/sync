@@ -20,7 +20,7 @@ description: >-
 
 | Binary Name | Wasm    | SDK version |
 | ----------- | ------- | ----------- |
-| axoned      | Enabled | v0.47.3     |
+| axoned      | Enabled | v0.50.13    |
 
 {% tabs %}
 {% tab title="RPC" %}
