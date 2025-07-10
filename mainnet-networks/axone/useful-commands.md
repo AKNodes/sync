@@ -77,17 +77,18 @@ EOF
 
 ```
 axoned tx staking edit-validator \
---new-moniker "YOUR_MONIKER_NAME" \
---identity "YOUR_KEYBASE_ID" \
---details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id axone-1 \
---commission-rate 0.05 \
---from wallet \
---gas-adjustment 1.4 \
---gas auto \
---gas-prices 0uaxone \
--y
+  --new-moniker "YOUR_MONIKER_NAME" \
+  --identity "YOUR_KEYBASE_ID" \
+  --details "YOUR_DETAILS" \
+  --website "YOUR_WEBSITE_URL" \
+  --commission-rate 0.05 \
+  --chain-id axone-1 \
+  --from wallet \
+  --gas-adjustment 1.4 \
+  --gas auto \
+  --gas-prices 0uaxone \
+  -y
+
 ```
 
 &#x20;**Unjail validator**
