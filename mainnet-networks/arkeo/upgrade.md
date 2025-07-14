@@ -1,5 +1,5 @@
 ---
-description: Height 1526000
+description: '1526000'
 ---
 
 # Upgrade
