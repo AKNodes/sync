@@ -2,6 +2,7 @@
 description: >-
   Axelar delivers secure cross-chain communication for Web3, enabling you to
   build Interchain dApps that grow beyond a single chain.
+hidden: true
 ---
 
 # Axelar

@@ -2,6 +2,7 @@
 description: >-
   Symphony is a chain built on Cosmos that provides a crypto-native solution for
   real-world assets not reliant on traditional banking infrastructure.
+hidden: true
 ---
 
 # Symphony
@@ -33,3 +34,4 @@ https://api.symphony.aknodes.net
 grpc.symphony.aknodes.net:6490
 {% endtab %}
 {% endtabs %}
+

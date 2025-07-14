@@ -2,6 +2,7 @@
 description: >-
   Side Protocol is a settlement and value exchange layer for the Bitcoin modular
   blockchains.
+hidden: true
 ---
 
 # Side Protocol

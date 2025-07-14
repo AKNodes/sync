@@ -3,6 +3,7 @@ description: >-
   Binding a highly interwoven system of modular networks through architectural
   ownership of the L1 orchestration layer, L2 network, and the communication
   protocol.
+hidden: true
 ---
 
 # Initia

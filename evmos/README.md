@@ -2,6 +2,7 @@
 description: >-
   Evmos is the blockchain network, that lets you use a new generation of
   applications, built by developers across the world.
+hidden: true
 ---
 
 # Evmos
