@@ -1,6 +1,6 @@
 # Upgrade
 
-version **v2.3.2.0-rc1**
+version **v2.3.2.0**
 
 ### Stop your node
 
