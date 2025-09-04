@@ -192,3 +192,7 @@
   * [Upgrade](other-projetcs/avail-turing/upgrade.md)
 * [Nulink](other-projetcs/nulink.md)
 * [MOI](other-projetcs/moi.md)
+
+***
+
+* [Hyperlane Base Validator Setup Guide](hyperlane-base-validator-setup-guide.md)
