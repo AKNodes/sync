@@ -196,3 +196,4 @@
 ***
 
 * [Hyperlane Base Validator Setup Guide](hyperlane-base-validator-setup-guide.md)
+* [gitopia upgrade](gitopia-upgrade.md)
