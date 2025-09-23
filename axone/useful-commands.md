@@ -65,7 +65,7 @@ axoned tx staking create-validator <(cat <<EOF
 }
 EOF
 ) \
---chain-id axone-dentrite-1 \
+--chain-id axone-dentrite-2 \
 --from wallet \
 --gas-adjustment 1.4 \
 --gas auto \
@@ -81,7 +81,7 @@ axoned tx staking edit-validator \
 --identity "YOUR_KEYBASE_ID" \
 --details "YOUR_DETAILS" \
 --website "YOUR_WEBSITE_URL" \
---chain-id axone-dentrite-1 \
+--chain-id axone-dentrite-2 \
 --commission-rate 0.05 \
 --from wallet \
 --gas-adjustment 1.4 \
@@ -93,7 +93,7 @@ axoned tx staking edit-validator \
 &#x20;**Unjail validator**
 
 ```
-axoned tx slashing unjail --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx slashing unjail --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Jail reason**
@@ -125,43 +125,43 @@ axoned q staking validator $(axoned keys show wallet --bech val -a)
 &#x20;**Withdraw rewards from all validators**
 
 ```
-axoned tx distribution withdraw-all-rewards --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx distribution withdraw-all-rewards --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Withdraw commission and rewards from your validator**
 
 ```
-axoned tx distribution withdraw-rewards $(axoned keys show wallet --bech val -a) --commission --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx distribution withdraw-rewards $(axoned keys show wallet --bech val -a) --commission --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Delegate tokens to yourself**
 
 ```
-axoned tx staking delegate $(axoned keys show wallet --bech val -a) 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx staking delegate $(axoned keys show wallet --bech val -a) 1000000uaxone --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Delegate tokens to validator**
 
 ```
-axoned tx staking delegate <TO_VALOPER_ADDRESS> 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx staking delegate <TO_VALOPER_ADDRESS> 1000000uaxone --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Redelegate tokens to another validator**
 
 ```
-axoned tx staking redelegate $(axoned keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx staking redelegate $(axoned keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uaxone --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Unbond tokens from your validator**
 
 ```
-axoned tx staking unbond $(axoned keys show wallet --bech val -a) 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx staking unbond $(axoned keys show wallet --bech val -a) 1000000uaxone --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Send tokens to the wallet**
 
 ```
-axoned tx bank send wallet <TO_WALLET_ADDRESS> 1000000uaxone --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx bank send wallet <TO_WALLET_ADDRESS> 1000000uaxone --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 ### &#x20;🗳 Governance <a href="#governance" id="governance"></a>
@@ -181,25 +181,25 @@ axoned query gov proposal 1
 &#x20;**Vote ‘Yes’**
 
 ```
-axoned tx gov vote 1 yes --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx gov vote 1 yes --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Vote ‘No’**
 
 ```
-axoned tx gov vote 1 no --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx gov vote 1 no --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Vote ‘Abstain’**
 
 ```
-axoned tx gov vote 1 abstain --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx gov vote 1 abstain --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 &#x20;**Vote ‘NoWithVeto’**
 
 ```
-axoned tx gov vote 1 NoWithVeto --from wallet --chain-id axone-dentrite-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
+axoned tx gov vote 1 NoWithVeto --from wallet --chain-id axone-dentrite-2 --gas-adjustment 1.4 --gas auto --gas-prices 0uaxone -y
 ```
 
 ### &#x20;⚡️ Utility <a href="#utility" id="utility"></a>
@@ -317,35 +317,35 @@ sudo systemctl enable axone-testnet.service
 &#x20;**Disable service**
 
 ```
-sudo systemctl disable axone-testnet.service
+sudo systemctl disable axoned
 ```
 
 &#x20;**Start service**
 
 ```
-sudo systemctl start axone-testnet.service
+sudo systemctl start axoned
 ```
 
 &#x20;**Stop service**
 
 ```
-sudo systemctl stop axone-testnet.service
+sudo systemctl stop axoned
 ```
 
 &#x20;**Restart service**
 
 ```
-sudo systemctl restart axone-testnet.service
+sudo systemctl restart axoned
 ```
 
 &#x20;**Check service status**
 
 ```
-sudo systemctl status axone-testnet.service
+sudo systemctl status axoned
 ```
 
 &#x20;**Check service logs**
 
 ```
-sudo journalctl -u axone-testnet.service -f --no-hostname -o cat
+sudo journalctl -u axoned -f --no-hostname -o cat
 ```

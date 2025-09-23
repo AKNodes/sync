@@ -12,7 +12,7 @@ description: >-
 
 <figure><img src="../.gitbook/assets/EeZIYE7B_400x400-removebg-preview.png" alt="" width="200"><figcaption></figcaption></figure>
 
-<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>axone-dentrite-1</td><td>10.0.0</td></tr></tbody></table>
+<table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>axone-dentrite-2</td><td>12.0.0</td></tr></tbody></table>
 
 
 

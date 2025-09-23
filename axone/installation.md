@@ -47,7 +47,7 @@ git clone https://github.com/axone-protocol/axoned
 
 cd axoned || return
 
-git checkout v10.0.0
+git checkout v12.0.0
 
 make install
 
@@ -56,7 +56,7 @@ make install
 ## **Initialize Node**
 
 ```
-axoned init "$MONIKER" --chain-id=axone-dentrite-1
+axoned init "$MONIKER" --chain-id=axone-dentrite-2
 ```
 
 ### Download genesis and addrbook

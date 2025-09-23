@@ -26,7 +26,7 @@ sudo systemctl stop axoned
 cp $HOME/.axoned/data/priv_validator_state.json $HOME/.axoned/priv_validator_state.json.backup
 axoned tendermint unsafe-reset-all --home $HOME/.axoned
 
-peers="5edb78aa26a593a77a372079593617809f1ca8fd@167.235.14.83:62656"  
+peers="dfd73067f77e9a744eed90e1ae3dde145197adec@167.235.14.83:36656"  
 SNAP_RPC="https://rpc.axone.aknodes.net:443"
 
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.axoned/config/config.toml 
