@@ -1,11 +1,11 @@
 # Useful commands
 
-### <mark style="color:orange;">Service operations ⚙️</mark> <a href="#service-operations" id="service-operations"></a>
+### Service operations ⚙️ <a href="#service-operations" id="service-operations"></a>
 
 Check logs
 
 ```bash
-sudo journalctl -u wardend -f
+sudo journalctl -u wardend -fo cat
 ```
 
 Start service
@@ -62,7 +62,7 @@ Your node peer
 echo $(wardend tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.warden/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
-### <mark style="color:yellow;">Key management</mark> <a href="#key-management" id="key-management"></a>
+### Key management <a href="#key-management" id="key-management"></a>
 
 Add New Wallet
 
@@ -112,18 +112,20 @@ Import Key (restore from wallet.backup)
 wardend keys import $WALLET wallet.backup
 ```
 
-### <mark style="color:green;">Tokens</mark> <a href="#tokens" id="tokens"></a>
+### Tokens <a href="#tokens" id="tokens"></a>
+
+To valoper addressTo wallet addressAmount, award
 
 Withdraw all rewards
 
 ```bash
-wardend tx distribution withdraw-all-rewards --from $WALLET --chain-id chiado_10010-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award 
+wardend tx distribution withdraw-all-rewards --from $WALLET --chain-id barra_9191-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award 
 ```
 
 Withdraw rewards and commission from your validator
 
 ```bash
-wardend tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id chiado_10010-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id barra_9191-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
 ```
 
 Check your balance
@@ -135,25 +137,25 @@ wardend query bank balances $WALLET_ADDRESS
 Delegate to Yourself
 
 ```bash
-wardend tx staking delegate $(wardend keys show $WALLET --bech val -a) 1000000award --from $WALLET --chain-id chiado_10010-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx staking delegate $(wardend keys show $WALLET --bech val -a) 1000000award --from $WALLET --chain-id barra_9191-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
 ```
 
 Delegate
 
 ```bash
-wardend tx staking delegate <TO_VALOPER_ADDRESS> 1000000award --from $WALLET --chain-id chiado_10010-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 	
+wardend tx staking delegate <TO_VALOPER_ADDRESS> 1000000award --from $WALLET --chain-id barra_9191-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 	
 ```
 
 Redelegate Stake to Another Validator
 
 ```bash
-wardend tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000award --from $WALLET --chain-id chiado_10010-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000award --from $WALLET --chain-id barra_9191-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
 ```
 
 Unbond
 
 ```bash
-wardend tx staking unbond $(wardend keys show $WALLET --bech val -a) 1000000award --from $WALLET --chain-id chiado_10010-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx staking unbond $(wardend keys show $WALLET --bech val -a) 1000000award --from $WALLET --chain-id barra_9191-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
 ```
 
 Transfer Funds
@@ -162,7 +164,22 @@ Transfer Funds
 wardend tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000award --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
 ```
 
-### <mark style="color:purple;">Validator operations</mark> <a href="#validator-operations" id="validator-operations"></a>
+### Governance <a href="#governance" id="governance"></a>
+
+Create New Text Proposal
+
+```bash
+wardend  tx gov submit-proposal \
+--title "" \
+--description "" \
+--deposit 1000000award \
+--type Text \
+--from $WALLET \
+--gas auto --gas-adjustment 1.6 --fees 250000000000000award \
+-y 
+```
+
+### Validator operations <a href="#validator-operations" id="validator-operations"></a>
 
 Create New Validator
 
@@ -177,8 +194,8 @@ wardend tx staking create-validator \
 --pubkey $(wardend tendermint show-validator) \
 --moniker "$MONIKER" \
 --identity "" \
---details "xxxxxx" \
---chain-id chiado_10010-1 \
+--details "xxxxxxxxx" \
+--chain-id barra_9191-1 \
 --gas auto --gas-adjustment 1.6 --fees 250000000000000award \
 -y 
 ```
@@ -190,9 +207,9 @@ wardend tx staking edit-validator \
 --commission-rate 0.1 \
 --new-moniker "$MONIKER" \
 --identity "" \
---details "xxxxxx" \
+--details "xxxxxxxxx" \
 --from $WALLET \
---chain-id chiado_10010-1 \
+--chain-id barra_9191-1 \
 --gas auto --gas-adjustment 1.6 --fees 250000000000000award \
 -y 
 ```
@@ -224,7 +241,7 @@ wardend q slashing params
 Unjail validator
 
 ```bash
-wardend tx slashing unjail --from $WALLET --chain-id chiado_10010-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx slashing unjail --from $WALLET --chain-id barra_9191-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
 ```
 
 Active Validators List
@@ -245,35 +262,4 @@ Signing info
 wardend q slashing signing-info $(wardend tendermint show-validator) 
 ```
 
-### <mark style="color:blue;background-color:purple;">Governance</mark> <a href="#governance" id="governance"></a>
-
-Create New Text Proposal
-
-```bash
-wardend  tx gov submit-proposal \
---title "" \
---description "" \
---deposit 1000000award \
---type Text \
---from $WALLET \
---gas auto --gas-adjustment 1.6 --fees 250000000000000award \
--y 
-```
-
-Proposals List
-
-```bash
-wardend query gov proposals 
-```
-
-View proposal
-
-```bash
-wardend query gov proposal 1 
-```
-
-Vote
-
-```bash
-wardend tx gov vote 1 yes --from $WALLET --chain-id chiado_10010-1  --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
-```
+### &#x20;<a href="#governance" id="governance"></a>

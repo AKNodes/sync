@@ -34,18 +34,19 @@ go version
 
 ```
 cd $HOME
-rm -rf bin
+rm -rf wardenprotocol
 mkdir bin && cd bin
-wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.5.4/wardend_Linux_x86_64.zip
-unzip wardend_Linux_x86_64.zip
-chmod +x wardend
-mv $HOME/bin/wardend $HOME/go/bin
+git clone https://github.com/warden-protocol/wardenprotocol.git
+cd wardenprotocol
+git checkout v0.7.0-rc3
+just wardend build
+mv $HOME/wardenprotocol/build/wardend $HOME/go/bin
 ```
 
 ## **Initialize Node**
 
 ```
-wardend init MyNode --chain-id chiado_10010-1
+wardend init MyNode --chain-id barra_9191-1
 ```
 
 ### Download genesis and addrbook
