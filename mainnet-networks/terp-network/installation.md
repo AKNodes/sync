@@ -47,7 +47,7 @@ git clone https://github.com/terpnetwork/terp-core.git
 
 cd terp-core
 
-git checkout v4.1.1
+git checkout v5.0.1
 
 make install
 
