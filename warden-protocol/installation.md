@@ -38,7 +38,7 @@ rm -rf wardenprotocol
 mkdir bin && cd bin
 git clone https://github.com/warden-protocol/wardenprotocol.git
 cd wardenprotocol
-git checkout v0.7.0-rc3
+git checkout v0.7.2
 just wardend build
 mv $HOME/wardenprotocol/build/wardend $HOME/go/bin
 ```
