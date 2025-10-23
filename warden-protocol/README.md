@@ -10,11 +10,9 @@ description: >-
 
 {% embed url="https://explorer.aknodes.com/WARDEN-TESTNET/" %}
 
-<figure><img src="../.gitbook/assets/158038121.jpeg" alt="" width="100"><figcaption></figcaption></figure>
 
 
-
-
+<figure><img src="../.gitbook/assets/warden.webp" alt=""><figcaption></figcaption></figure>
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>barra_9191-1</td><td>v0.7.2</td></tr></tbody></table>
 
