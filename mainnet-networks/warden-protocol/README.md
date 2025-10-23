@@ -2,6 +2,7 @@
 description: >-
   Warden Protocol is an intent-centric protocol, built on the Cosmos SDK, that
   enables various execution layers for interoperability
+hidden: true
 ---
 
 # Warden Protocol
