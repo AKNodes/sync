@@ -1,6 +1,6 @@
 # Upgrade
 
-### Manually
+### Manually & Auto
 
 ```
 cd $HOME
