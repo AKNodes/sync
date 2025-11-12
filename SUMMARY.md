@@ -203,3 +203,4 @@
 * [Hyperlane Base Validator Setup Guide](hyperlane-base-validator-setup-guide.md)
 * [gitopia upgrade](gitopia-upgrade.md)
 * [Docker logs auto delete script](docker-logs-auto-delete-script.md)
+* [Nibiru price feeder](nibiru-price-feeder.md)
