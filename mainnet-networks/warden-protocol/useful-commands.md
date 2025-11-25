@@ -1,250 +1,298 @@
 # Useful commands
 
-### Service operations ⚙️ <a href="#service-operations" id="service-operations"></a>
+### **📌 Service Operations**
 
-Check logs
+#### **Check logs**
 
 ```bash
 sudo journalctl -u wardend -fo cat
 ```
 
-Start service
+#### **Start service**
 
 ```bash
 sudo systemctl start wardend
 ```
 
-Stop service
+#### **Stop service**
 
 ```bash
 sudo systemctl stop wardend
 ```
 
-Restart service
+#### **Restart service**
 
 ```bash
 sudo systemctl restart wardend
 ```
 
-Check service status
+#### **Check service status**
 
 ```bash
 sudo systemctl status wardend
 ```
 
-Reload services
+#### **Reload systemd**
 
 ```bash
 sudo systemctl daemon-reload
 ```
 
-Enable Service
+#### **Enable service (auto-start)**
 
 ```bash
 sudo systemctl enable wardend
 ```
 
-Disable Service
+#### **Disable service**
 
 ```bash
 sudo systemctl disable wardend
 ```
 
-Node info
+***
+
+## **📡 Node Information**
+
+#### **Node status**
 
 ```bash
 wardend status 2>&1 | jq
 ```
 
-### Key management <a href="#key-management" id="key-management"></a>
+***
 
-Add New Wallet
+## **🔑 Wallet Management**
+
+#### **Add a new wallet**
 
 ```bash
 wardend keys add $WALLET
 ```
 
-Restore executing wallet
+#### **Recover a wallet**
 
 ```bash
 wardend keys add $WALLET --recover
 ```
 
-List All Wallets
+#### **List all wallets**
 
 ```bash
 wardend keys list
 ```
 
-Delete wallet
+#### **Delete a wallet**
 
 ```bash
 wardend keys delete $WALLET
 ```
 
-Check Balance
+#### **Check wallet balance**
 
 ```bash
-wardend q bank balances $WALLET_ADDRESS 
+wardend q bank balances $WALLET_ADDRESS
 ```
 
-Export Key (save to wallet.backup)
+#### **Export wallet key**
 
 ```bash
-wardend keys export $WALLET
+wardend keys export $WALLET > wallet.backup
 ```
 
-View EVM Prived Key
+#### **View EVM private key**
 
 ```bash
 wardend keys unsafe-export-eth-key $WALLET
 ```
 
-Import Key (restore from wallet.backup)
+#### **Import key from backup**
 
 ```bash
 wardend keys import $WALLET wallet.backup
 ```
 
-### Tokens <a href="#tokens" id="tokens"></a>
+***
 
-Withdraw all rewards
+## **💰 Tokens / Staking Operations**
 
-```bash
-wardend tx distribution withdraw-all-rewards --from $WALLET --chain-id warden_8765-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award 
-```
-
-Withdraw rewards and commission from your validator
+#### **Withdraw all rewards**
 
 ```bash
-wardend tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id warden_8765-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx distribution withdraw-all-rewards \
+  --from $WALLET \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award -y
 ```
 
-Check your balance
+#### **Withdraw rewards + commission**
 
 ```bash
-wardend query bank balances $WALLET_ADDRESS
+wardend tx distribution withdraw-rewards $VALOPER_ADDRESS \
+  --commission \
+  --from $WALLET \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award -y
 ```
 
-Delegate to Yourself
+#### **Delegate to your own validator**
 
 ```bash
-wardend tx staking delegate $(wardend keys show $WALLET --bech val -a) 1000000award --from $WALLET --chain-id warden_8765-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx staking delegate \
+  $(wardend keys show $WALLET --bech val -a) \
+  1000000award \
+  --from $WALLET \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award -y
 ```
 
-Delegate
+#### **Delegate to another validator**
 
 ```bash
-wardend tx staking delegate <TO_VALOPER_ADDRESS> 1000000award --from $WALLET --chain-id warden_8765-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 	
+wardend tx staking delegate <TO_VALOPER_ADDRESS> \
+  1000000award \
+  --from $WALLET \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award -y
 ```
 
-Redelegate Stake to Another Validator
+#### **Redelegate stake**
 
 ```bash
-wardend tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000award --from $WALLET --chain-id warden_8765-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx staking redelegate \
+  $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> \
+  1000000award \
+  --from $WALLET \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award -y
 ```
 
-Unbond
+#### **Unbond stake**
 
 ```bash
-wardend tx staking unbond $(wardend keys show $WALLET --bech val -a) 1000000award --from $WALLET --chain-id warden_8765-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx staking unbond \
+  $(wardend keys show $WALLET --bech val -a) \
+  1000000award \
+  --from $WALLET \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award -y
 ```
 
-Transfer Funds
+#### **Send tokens**
 
 ```bash
-wardend tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000award --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> \
+  1000000award \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award -y
 ```
 
-### Validator operations <a href="#validator-operations" id="validator-operations"></a>
+***
 
-Create New Validator
+## **🧱 Validator Operations**
+
+### **Create a new validator**
 
 ```bash
 wardend tx staking create-validator \
---amount 1000000award \
---from $WALLET \
---commission-rate 0.1 \
---commission-max-rate 0.2 \
---commission-max-change-rate 0.01 \
---min-self-delegation 1 \
---pubkey $(wardend tendermint show-validator) \
---moniker "$MONIKER" \
---identity "xxxxxxxxx" \
---details "xxxxxxxxxx" \
---chain-id warden_8765-1 \
---gas auto --gas-adjustment 1.6 --fees 250000000000000award \
--y 
+  --amount 1000000award \
+  --from $WALLET \
+  --commission-rate 0.1 \
+  --commission-max-rate 0.2 \
+  --commission-max-change-rate 0.01 \
+  --min-self-delegation 1 \
+  --pubkey $(wardend tendermint show-validator) \
+  --moniker "$MONIKER" \
+  --identity "xxxxxxxxx" \
+  --details "xxxxxxxxxx" \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award \
+  -y
 ```
 
-Edit Existing Validator
+### **Edit your validator**
 
 ```bash
 wardend tx staking edit-validator \
---commission-rate 0.1 \
---new-moniker "$MONIKER" \
---identity "xxxxxxxxxxx" \
---details "xxxxxxxxxxxx" \
---from $WALLET \
---chain-id warden_8765-1 \
---gas auto --gas-adjustment 1.6 --fees 250000000000000award \
--y 
+  --commission-rate 0.1 \
+  --new-moniker "$MONIKER" \
+  --identity "xxxxxxxxxxx" \
+  --details "xxxxxxxxxxxx" \
+  --from $WALLET \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award \
+  -y
 ```
 
-Validator info
+***
+
+## **📋 Validator Status**
+
+#### **Get validator details**
 
 ```bash
-wardend status 2>&1 | jq
+wardend q staking validator \
+  $(wardend keys show $WALLET --bech val -a)
 ```
 
-Validator Details
+#### **Check jailing info**
 
 ```bash
-wardend q staking validator $(wardend keys show $WALLET --bech val -a) 
+wardend q slashing signing-info $(wardend tendermint show-validator)
 ```
 
-Jailing info
+#### **Slashing parameters**
 
 ```bash
-wardend q slashing signing-info $(wardend tendermint show-validator) 
+wardend q slashing params
 ```
 
-Slashing parameters
+#### **Unjail validator**
 
 ```bash
-wardend q slashing params 
+wardend tx slashing unjail \
+  --from $WALLET \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award -y
 ```
 
-Unjail validator
+#### **Active validators list**
 
 ```bash
-wardend tx slashing unjail --from $WALLET --chain-id warden_8765-1 --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
+wardend q staking validators -oj --limit=2000 \
+| jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
+| jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + "   " + .description.moniker' \
+| sort -gr | nl
 ```
 
-Active Validators List
+#### **Verify validator consensus key**
 
 ```bash
-wardend q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " 	 " + .description.moniker' | sort -gr | nl 
+[[ $(wardend q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = \
+$(wardend status | jq -r .ValidatorInfo.PubKey.value) ]] \
+&& echo "Your key status is OK" \
+|| echo "Your key status is ERROR"
 ```
 
-Check Validator key
+***
+
+## **🗳 Governance**
+
+#### **Vote on proposal**
 
 ```bash
-[[ $(wardend q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(wardend status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "Your key status is ok" || echo -e "Your key status is error"
+wardend tx gov vote 1 yes \
+  --from $WALLET \
+  --chain-id warden_8765-1 \
+  --gas auto --gas-adjustment 1.6 \
+  --fees 250000000000000award -y
 ```
-
-Signing info
-
-```bash
-wardend q slashing signing-info $(wardend tendermint show-validator) 
-```
-
-### Governance <a href="#governance" id="governance"></a>
-
-Vote
-
-```bash
-wardend tx gov vote 1 yes --from $WALLET --chain-id warden_8765-1  --gas auto --gas-adjustment 1.6 --fees 250000000000000award -y 
-```
-
-### &#x20;<a href="#governance" id="governance"></a>
