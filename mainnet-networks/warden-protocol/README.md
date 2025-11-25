@@ -8,7 +8,7 @@ description: >-
 
 ### Explorer
 
-{% embed url="https://explorer.aknodes.com/WARDEN-TESTNET/" %}
+{% embed url="https://explorer.aknodes.com/WARDEN-MAINNET" %}
 
 
 
