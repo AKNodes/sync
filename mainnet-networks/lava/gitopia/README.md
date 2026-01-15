@@ -10,7 +10,7 @@ description: >-
 
 {% embed url="https://explorer.aknodes.com/gitopia/" %}
 
-<figure><img src="../../.gitbook/assets/0r9YJOJW_400x400.png" alt="" width="100"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/0r9YJOJW_400x400.png" alt="" width="100"><figcaption></figcaption></figure>
 
 
 

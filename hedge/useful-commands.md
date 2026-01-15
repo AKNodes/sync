@@ -2,26 +2,22 @@
 
 ### <mark style="color:yellow;">Keys</mark> :
 
-*   add keys\
-
+*   add keys<br>
 
     ```
     hedged keys add wallet
     ```
-*   delete keys\
-
+*   delete keys<br>
 
     ```
     hedged keys delete wallet
     ```
-*   recover keys from a seed passphrase\
-
+*   recover keys from a seed passphrase<br>
 
     ```
     hedged keys add wallet --recover
     ```
-*   list all keys\
-
+*   list all keys<br>
 
     ```
     hedged keys list
@@ -29,8 +25,7 @@
 
 ###
 
-*   send balance\
-
+*   send balance<br>
 
     ```
     hedged tx bank send wallet [TO_ADDRESS] [AMOUNT]uhedge \
@@ -40,8 +35,7 @@
     ```
 
 
-*   multi send balance\
-
+*   multi send balance<br>
 
     ```
     hedged tx bank multi-send wallet [TO_ADDRESS1] [TO_ADDRESS2] [TO_ADDRESS3] [AMOUNT]uhedge \
@@ -51,8 +45,7 @@
     ```
 
 
-*   create-validator\
-
+*   create-validator<br>
 
     ```
     hedged tx staking create-validator \
@@ -73,8 +66,7 @@
     ```
 
 
-*   edit-validator\
-
+*   edit-validator<br>
 
     ```
     hedged tx staking edit-validator \
@@ -90,8 +82,7 @@
     ```
 
 
-*   delegate / stake\
-
+*   delegate / stake<br>
 
     ```
     hedged tx staking delegate [TO_VALOPER_ADDRESS] [AMOUNT]uhedge \
@@ -101,8 +92,7 @@
     ```
 
 
-*   redelegate\
-
+*   redelegate<br>
 
     ```
     hedged tx staking redelegate [SRC_VALOPER_ADDRESS] [TO_VALOPER_ADDRESS] [AMOUNT]uhedge \
@@ -115,8 +105,7 @@
 
 ### <mark style="color:red;">Slashing</mark> :
 
-*   unjail-validator\
-
+*   unjail-validator<br>
 
     ```
     hedged tx slashing unjail \
@@ -129,16 +118,14 @@
 
 ### <mark style="color:orange;">Gov</mark> :
 
-*   query all proposals:\
-
+*   query all proposals:<br>
 
     ```
     hedged query gov proposals
     ```
 
 
-*   query specific proposals by id:\
-
+*   query specific proposals by id:<br>
 
     ```
     hedged query gov proposal [PROPOSAL_ID]
@@ -160,8 +147,7 @@
 
 ### <mark style="color:purple;">Distribution</mark> :
 
-*   Withdraw all rewards :\
-
+*   Withdraw all rewards :<br>
 
     ```
     hedged tx distribution withdraw-all-rewards \
@@ -171,8 +157,7 @@
     ```
 
 
-*   Withdraw reward and commission:\
-
+*   Withdraw reward and commission:<br>
 
     ```
     hedged tx distribution withdraw-rewards $(hedged keys show wallet --bech val -a) \

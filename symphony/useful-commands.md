@@ -45,7 +45,7 @@ symphonyd q bank balances $(symphonyd keys show wallet -a)
 
 ```
 
-### Validator management 👷 
+### Validator management 👷<br>
 
 **Create new validator**
 
