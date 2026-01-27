@@ -3,6 +3,7 @@ description: >-
   Galactica Network is an L1 with unique protocol properties. Powered by zero
   knowledge cryptography, Galactica aspires to be the first chain with KYC-
   contingent transactions.
+hidden: true
 ---
 
 # Galactica

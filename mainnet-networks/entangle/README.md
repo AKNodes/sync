@@ -3,6 +3,7 @@ description: >-
   Entangle envisions a barrier-free future where protocols on every chain are
   interconnected, reducing the inherent complexities of DeFi from a user and
   developer perspective.
+hidden: true
 ---
 
 # Entangle

@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Axelar
 
 <figure><img src="../../.gitbook/assets/swsw-removebg-preview (1).png" alt="" width="85"><figcaption></figcaption></figure>

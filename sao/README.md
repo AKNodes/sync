@@ -1,5 +1,6 @@
 ---
 description: A decentralized storage infrastructure for Web3
+hidden: true
 ---
 
 # SAO

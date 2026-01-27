@@ -3,6 +3,7 @@ description: >-
   Andromeda Protocol is an all-on-chain suite of products, tools, and utilities
   enabled by a decentralized operating system we call aOS, or Andromeda
   Operating System.
+hidden: true
 ---
 
 # Andromeda

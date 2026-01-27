@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Evmos
 
 <figure><img src="../../.gitbook/assets/qqqq-removebg-preview.png" alt="" width="100"><figcaption></figcaption></figure>
