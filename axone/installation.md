@@ -56,7 +56,7 @@ make install
 ## **Initialize Node**
 
 ```
-axoned init "$MONIKER" --chain-id=axone-denrite-2
+axoned init "$MONIKER" --chain-id=axone-den
 ```
 
 ### Download genesis and addrbook
