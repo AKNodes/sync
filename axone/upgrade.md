@@ -1,6 +1,17 @@
+---
+description: Height 2802853
+---
+
 # Upgrade
 
-
+```
+cd $HOME
+rm -rf axone
+git clone https://github.com/axone-protocol.git
+cd axone
+git checkout v14.0.0
+systemctl restart axoned && journalctl -u axoned -f
+```
 
 ```
 cd $HOME && \
