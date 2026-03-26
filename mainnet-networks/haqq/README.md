@@ -27,7 +27,7 @@ https://rpc.haqq.aknodes.net
 {% endtab %}
 
 {% tab title="API" %}
-https://rpc.haqq.aknodes.net
+https://api.haqq.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
