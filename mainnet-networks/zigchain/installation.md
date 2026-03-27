@@ -55,11 +55,11 @@ zigchaind init "$MONIKER" --chain-zigchain-1
 
 ### Download genesis and addrbook
 
-<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/zigchain-mainnet/genesis.json > $HOME/.terp/config/genesis.json
+<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/zigchain-mainnet/genesis.json > $HOME/.zigchain/config/genesis.json
 </strong></code></pre>
 
 ```
-curl -Ls https://snapshots.aknodes.net/snapshots/zigchain-mainnet/addrbook.json > $HOME/.terp/config/addrbook.json
+curl -Ls https://snapshots.aknodes.net/snapshots/zigchain-mainnet/addrbook.json > $HOME/.zigchain/config/addrbook.json
 ```
 
 ### **Create Service**
