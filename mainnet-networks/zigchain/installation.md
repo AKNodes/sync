@@ -40,44 +40,38 @@ go version
 
 ```
 cd $HOME
-
-rm -rf ~/terp-core
-
-git clone https://github.com/terpnetwork/terp-core.git
-
-cd terp-core
-
-git checkout v5.0.1
-
-make install
+wget https://snapshots.aknodes.net/snapshots/zigchain-mainnet/zigchaind
+chmod +x zigchaind
+mv zigchaind $HOME/go/bin/
+zigchaind version
 
 ```
 
 ## **Initialize Node**
 
 ```
-terpd init "$MONIKER" --chain-id=morocco-1
+zigchaind init "$MONIKER" --chain-zigchain-1
 ```
 
 ### Download genesis and addrbook
 
-<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/terp/genesis.json > $HOME/.terp/config/genesis.json
+<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/zigchain-mainnet/genesis.json > $HOME/.terp/config/genesis.json
 </strong></code></pre>
 
 ```
-curl -Ls https://snapshots.aknodes.net/snapshots/terp/addrbook.json > $HOME/.terp/config/addrbook.json
+curl -Ls https://snapshots.aknodes.net/snapshots/zigchain-mainnet/addrbook.json > $HOME/.terp/config/addrbook.json
 ```
 
 ### **Create Service**
 
 ```
-sudo tee /etc/systemd/system/terpd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/zigchaind.service > /dev/null <<EOF
 [Unit]
-Description=terpd Daemon
+Description=zigchaind Daemon
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=$(which terpd) start
+ExecStart=$(which zigchaind) start
 Restart=always
 RestartSec=3
 LimitNOFILE=65535
@@ -85,20 +79,19 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable terpd
+sudo systemctl enable zigchaind
 ```
 
 ### **Download Snapshot**
 
 ```
-terpd tendermint unsafe-reset-all --home $HOME/.terp --keep-addr-book 
-curl https://snapshots.aknodes.net/snapshots/terp/snapshot-terp.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.terpd
+zigchaind tendermint unsafe-reset-all --home $HOME/.zigchain --keep-addr-book 
+curl https://snapshots.aknodes.net/snapshots/zigchain-mainnet/snapshot-zigchain-mainnet.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.terpd
 ```
 
 ### Start the node
 
 ```
-sudo systemctl restart terpd
-journalctl -u terpd -f
+sudo systemctl restart zigchaind
+journalctl -u zigchaind -f
 ```
-
