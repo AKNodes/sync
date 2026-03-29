@@ -1,6 +1,12 @@
+---
+description: >-
+  ZIGChain is a Layer 1 blockchain built for wealth generation, powered by
+  Zignaly’s established social investment infrastructure
+---
+
 # Zigchain
 
-
+<figure><img src="../../.gitbook/assets/zigchain.png" alt="" width="84"><figcaption></figcaption></figure>
 
 
 
