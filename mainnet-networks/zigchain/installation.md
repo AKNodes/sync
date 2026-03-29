@@ -86,7 +86,7 @@ sudo systemctl enable zigchaind
 
 ```
 zigchaind tendermint unsafe-reset-all --home $HOME/.zigchain --keep-addr-book 
-curl https://snapshots.aknodes.net/snapshots/zigchain-mainnet/snapshot-zigchain-mainnet.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.terpd
+curl https://snapshots.aknodes.net/snapshots/zigchain-mainnet/snapshot-zigchain-mainnet.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.zigchain
 ```
 
 ### Start the node
