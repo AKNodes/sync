@@ -40,27 +40,27 @@ go version
 
 ```
 cd $HOME
-wget https://github.com/MANTRA-Chain/mantrachain/releases/download/v7.0.0-rc2/mantrachaind-7.0.0-rc2-linux-amd64.tar.gz
-tar -xvf mantrachaind-7.0.0-rc2-linux-amd64.tar.gz
-rm mantrachaind-7.0.0-rc2-linux-amd64.tar.gz
-chmod +x $HOME/bin/mantrachaind
-sudo mv $HOME/bin/mantrachaind $HOME/go/bin/
+rm -rf mantra
+git clone https://github.com/MANTRA-Chain/mantrachain/ mantra
+cd mantra
+git checkout v7.0.0
+make install
 
 ```
 
 ## **Initialize Node**
 
 ```
-mantrachaind init "$MONIKER" --chain-id=mantra-dukong-1
+mantrachaind init "$MONIKER" --chain-id=mantra-1
 ```
 
 ### Download genesis and addrbook
 
-<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/mantrachain/genesis.json > $HOME/.mantrachain/config/genesis.json
+<pre><code><strong>curl -Ls https://snapshots.aknodes.net/snapshots/mantrachain-mainnet/genesis.json > $HOME/.mantrachain/config/genesis.json
 </strong></code></pre>
 
 ```
-curl -Ls https://snapshots.aknodes.net/snapshots/mantrachain/addrbook.json > $HOME/.mantrachain/config/addrbook.json
+curl -Ls https://snapshots.aknodes.net/snapshots/mantrachain-mainnet/addrbook.json > $HOME/.mantrachain/config/addrbook.json
 ```
 
 ### **Create Service**
@@ -87,7 +87,7 @@ sudo systemctl enable mantrachaind
 
 ```
 mantrachaind tendermint unsafe-reset-all --home $HOME/.mantrachain --keep-addr-book 
-curl https://snapshots.aknodes.net/snapshots/mantrachain/snapshot-mantrachain.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.mantrachain
+curl https://snapshots.aknodes.net/snapshots/mantrachain-mainnet/snapshot-mantrachain-mainnet.AKNodes.lz4 | lz4 -dc - | tar -xf - -C $HOME/.mantrachain
 ```
 
 ### Start the node
@@ -96,4 +96,3 @@ curl https://snapshots.aknodes.net/snapshots/mantrachain/snapshot-mantrachain.AK
 sudo systemctl restart mantrachaind
 journalctl -u mantrachaind -f
 ```
-

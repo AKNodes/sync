@@ -187,6 +187,11 @@
   * [Upgrade](mainnet-networks/evmos/upgrade.md)
   * [Sync](mainnet-networks/evmos/sync.md)
   * [Useful commands](mainnet-networks/evmos/useful-commands.md)
+* [Mantrachain](mainnet-networks/mantrachain/README.md)
+  * [Installation](mainnet-networks/mantrachain/installation.md)
+  * [Upgrade](mainnet-networks/mantrachain/upgrade.md)
+  * [Sync](mainnet-networks/mantrachain/sync.md)
+  * [Usefull commands](mainnet-networks/mantrachain/usefull-commands.md)
 
 ## 💻 OTHER PROJETCS
 
