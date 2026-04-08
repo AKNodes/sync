@@ -40,18 +40,18 @@ go version
 
 ```
 cd $HOME
-sudo wget -O /usr/lib/libwasmvm.x86_64.so https://github.com/CosmWasm/wasmvm/releases/download/v3.0.0/libwasmvm.x86_64.so
-wget https://snapshots.aknodes.net/snapshots/mantrachain/mantrachaind-linux-amd64.zip
-unzip mantrachaind-linux-amd64.zip
-rm mantrachaind-linux-amd64.zip
-mv mantrachaind $HOME/go/bin
+wget https://github.com/MANTRA-Chain/mantrachain/releases/download/v7.0.0-rc2/mantrachaind-7.0.0-rc2-linux-amd64.tar.gz
+tar -xvf mantrachaind-7.0.0-rc2-linux-amd64.tar.gz
+rm mantrachaind-7.0.0-rc2-linux-amd64.tar.gz
+chmod +x $HOME/bin/mantrachaind
+sudo mv $HOME/bin/mantrachaind $HOME/go/bin/
 
 ```
 
 ## **Initialize Node**
 
 ```
-mantrachaind init "$MONIKER" --chain-id=mantra-hongbai-1
+mantrachaind init "$MONIKER" --chain-id=mantra-dukong-1
 ```
 
 ### Download genesis and addrbook
