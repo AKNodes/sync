@@ -43,7 +43,7 @@ cd $HOME
 rm -rf mantra
 git clone https://github.com/MANTRA-Chain/mantrachain/ mantra
 cd mantra
-git checkout v7.0.0
+git checkout v8.2.0
 make install
 
 ```
