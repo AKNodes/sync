@@ -9,6 +9,8 @@ description: >-
 
 ###
 
+{% embed url="https://explorer.aknodes.com/MANTRA-MAINNET" %}
+
 <figure><img src="../../.gitbook/assets/mantra.jpg" alt="" width="100"><figcaption></figcaption></figure>
 
 <table><thead><tr><th>Chain ID</th><th width="218.33333333333331">Version tag</th></tr></thead><tbody><tr><td>mantra-1</td><td>v8.2.0</td></tr></tbody></table>
