@@ -31,7 +31,7 @@ https://api.mantrachain.aknodes.net
 {% endtab %}
 
 {% tab title="gRPC" %}
-grpc.mantrachain.aknodes.net:1390
+[https://grpc.mantrachain.aknodes.net](https://grpc.mantrachain.aknodes.net)
 {% endtab %}
 {% endtabs %}
 
